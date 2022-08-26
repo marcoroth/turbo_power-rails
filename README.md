@@ -1,8 +1,6 @@
-# TurboPower
+# TurboPower Rails
 
-`turbo_power` is a power-pack for Turbo Streams. It provides Turbo Streams with a bunch of new actions and additionally adds the `morph` action from [`turbo-morph`](https://github.com/marcoroth/turbo-morph) and the `invoke` action from [`turbo_ready`](https://github.com/hopsoft/turbo_ready).
-
-This gem provides server-side Ruby helpers for the NPM package [`turbo_power`](https://github.com/marcoroth/turbo_power).
+`turbo_power` is a power-pack for Turbo Streams. This gem provides server-side Ruby helpers for the NPM package [`turbo_power`](https://github.com/marcoroth/turbo_power).
 
 ## Installation
 
@@ -42,9 +40,7 @@ import * as Turbo from '@hotwired/turbo'
 * `turbo_stream.set_meta(name, content)`
 
 
-
 ### Attribute Actions
-
 
 * `turbo_stream.add_css_class(target, classes, **attributes)`
 * `turbo_stream.remove_attribute(target, attribute, **attributes)`
@@ -75,7 +71,7 @@ import * as Turbo from '@hotwired/turbo'
 * `turbo_stream.set_session_storage_item(key, value, **attributes)`
 
 
-### Browser Actions
+### Browser Actions
 
 * `turbo_stream.redirect_to(url, action_name = nil, **attributes)`
 * `turbo_stream.reload(**attributes)`
@@ -97,7 +93,7 @@ import * as Turbo from '@hotwired/turbo'
 * `turbo_stream.console_log(message, level = :log, **attributes)`
 * `turbo_stream.console_table(data, columns, **attributes)`
 
-### Notification Actions
+### Notification Actions
 
 * `turbo_stream.notification(title, options, **attributes)`
 
