@@ -3,7 +3,7 @@ require "turbo-rails"
 module TurboPower
   module StreamHelper
 
-    # DOM Mutations
+    # DOM Actions
 
     def graft(target, parent, **attributes)
       action_all :graft, targets: target, attributes: attributes.merge(parent: parent)
@@ -33,9 +33,11 @@ module TurboPower
       action_all :text_content, targets: target, attributes: attributes.merge(text: text)
     end
 
+    def set_meta(name, content)
+      action :set_meta, attributes: attributes.merge(name: name, content: content)
+    end
 
-    # Element Attribute/Property Mutations
-
+    # Attribute Actions
 
     def add_css_class(target, classes, **attributes)
       action_all :add_css_class, targets: target, attributes: attributes.merge(classes: classes)
@@ -74,18 +76,14 @@ module TurboPower
     end
 
 
-    # DOM Events
+    # Event Actions
 
     def dispatch_event(target, name, detail: {}, **attributes)
       action_all :dispatch_event, targets: target, attributes: attributes.merge(detail: detail)
     end
 
-    def set_meta(name, content)
-      action :set_meta, attributes: attributes.merge(name: name, content: content)
-    end
 
-
-    # LocalStorage / SessionStorage
+    # Storage Actions
 
     def clear_storage(type, **attributes)
       action :clear_storage, attributes: attributes.merge(type: type)
@@ -98,7 +96,6 @@ module TurboPower
     def clear_session_storage(**attributes)
       clear_storage("session", **attributes)
     end
-
 
     def remove_storage_item(key, type, **attributes)
       action :remove_storage_item, attributes: attributes.merge(key: key, type: type)
@@ -126,18 +123,18 @@ module TurboPower
     end
 
 
-    # Browser Manipulations
+    # Browser Actions
 
     def redirect_to(url, action_name = nil, **attributes)
       action :redirect_to, attributes: attributes.merge(url: url, action: action_name)
     end
 
     def reload(**attributes)
-      action :relaod, attributes: attributes
+      action :reload, attributes: attributes
     end
 
     def scroll_into_view(target, inline = "nearest")
-      action_all :relaod, targets: target, attributes: attributes.merge(inline: inline)
+      action_all :scroll_into_view, targets: target, attributes: attributes.merge(inline: inline)
     end
 
     def set_cookie(cookie, **attributes)
@@ -145,7 +142,7 @@ module TurboPower
     end
 
     def set_cookie_item(key, value, **attributes)
-      action :set_cookie, attributes: attributes.merge(key: key, value: value)
+      action :set_cookie_item, attributes: attributes.merge(key: key, value: value)
     end
 
     def set_focus(target, **attributes)
@@ -153,7 +150,7 @@ module TurboPower
     end
 
 
-    # Browser History
+    # Browser History Actions
 
     def history_go(delta, **attributes)
       action :history_go, attributes: attributes.merge(delta: delta)
@@ -168,7 +165,7 @@ module TurboPower
     end
 
 
-    # Notifications
+    # Debug Actions
 
     def console_log(message, level: :log)
       action :console_log, attributes: { message: message, level: level }
@@ -177,6 +174,8 @@ module TurboPower
     def console_table(data, columns, **attributes)
       action :console_table, attributes: attributes.merge(data: data, columns: columns)
     end
+
+    # Notification Actions
 
     def notification(title, options, **attributes)
       action :notification, attributes: attributes.merge(title: title, options: options)
