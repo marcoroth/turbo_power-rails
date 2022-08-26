@@ -141,8 +141,8 @@ module TurboPack
 
     # Browser Manipulations
 
-    def redirect_to(url, action = nil, **attributes)
-      action :redirect_to, attributes: attributes.merge(url: url, action: action)
+    def redirect_to(url, action_name = nil, **attributes)
+      action :redirect_to, attributes: attributes.merge(url: url, action: action_name)
     end
 
     def reload(**attributes)
