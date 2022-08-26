@@ -49,20 +49,21 @@ module TurboPack
       action_all :remove_css_class, targets: target, attributes: attributes.merge(classes: classes)
     end
 
-    def set_attribute(target, attribute, **attributes)
-      action_all :set_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
+    def set_attribute(target, attribute, value, **attributes)
+      action_all :set_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
     end
 
-    def set_dataset_attribute(target, attribute, **attributes)
-      action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
+    def set_dataset_attribute(target, attribute, value, **attributes)
+      action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
     end
 
-    def set_property(target, property, **attributes)
-      action_all :set_property, targets: target, attributes: attributes.merge(property: property)
+    def set_property(target, property, value, **attributes)
+      action_all :set_property, targets: target, attributes: attributes.merge(property: property, value: value)
     end
 
-    def set_style(target, style, **attributes)
-      action_all :set_property, targets: target, attributes: attributes.merge(style: style)
+    def set_style(target, name, value, **attributes)
+      action_all :set_style, targets: target, attributes: attributes.merge(name: name, value: value)
+    end
     end
 
     def set_value(target, value, **attributes)
