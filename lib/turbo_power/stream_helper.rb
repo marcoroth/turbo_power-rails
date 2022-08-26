@@ -1,6 +1,6 @@
 require "turbo-rails"
 
-module TurboPack
+module TurboPower
   module StreamHelper
 
     # DOM Mutations
@@ -185,4 +185,4 @@ module TurboPack
   end
 end
 
-Turbo::Streams::TagBuilder.prepend(TurboPack::StreamHelper)
+Turbo::Streams::TagBuilder.prepend(TurboPower::StreamHelper)

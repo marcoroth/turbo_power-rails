@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module TurboPack
+module TurboPower
   VERSION = "0.1.0"
 end

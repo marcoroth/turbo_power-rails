@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "turbo_pack"
+require "turbo_power"
 
 require "irb"
 IRB.start(__FILE__)
