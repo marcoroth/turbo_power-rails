@@ -64,6 +64,9 @@ module TurboPack
     def set_style(target, name, value, **attributes)
       action_all :set_style, targets: target, attributes: attributes.merge(name: name, value: value)
     end
+
+    def set_styles(target, styles, **attributes)
+      action_all :set_styles, targets: target, attributes: attributes.merge(styles: styles)
     end
 
     def set_value(target, value, **attributes)
