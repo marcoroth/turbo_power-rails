@@ -56,7 +56,6 @@ module TurboPack
     def set_dataset_attribute(target, attribute, **attributes)
       action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
     end
-    alias :set_dataset_property :set_dataset_attribute
 
     def set_property(target, property, **attributes)
       action_all :set_property, targets: target, attributes: attributes.merge(property: property)
@@ -155,7 +154,6 @@ module TurboPack
     def history_go(delta, **attributes)
       action :history_go, attributes: attributes.merge(delta: delta)
     end
-    alias :go :history_go
 
     def push_state(url, title = nil, state = nil, **attributes)
       action :push_state, attributes: attributes.merge(url: url, title: title, state: state)
