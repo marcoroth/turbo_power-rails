@@ -18,15 +18,14 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/marcoroth/turbo_pack"
   spec.metadata["changelog_uri"] = "https://github.com/marcoroth/turbo_pack/blob/main/CHANGELOG.md"
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
-    end
-  end
+  spec.files = Dir[
+    "lib/**/*.{rb,rake}",
+    "app/**/*.rb",
+    "bin/*",
+    "[A-Z]*"
+  ]
 
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.test_files = Dir["test/**/*.rb"]
+
+  spec.add_dependency "turbo-rails"
 end
