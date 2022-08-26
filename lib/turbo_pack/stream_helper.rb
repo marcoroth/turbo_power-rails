@@ -5,10 +5,6 @@ module TurboPack
 
     # DOM Mutations
 
-    # def append(target, html = nil, **attributes, &block)
-    #   action :append, target, html, attributes: attributes, &block
-    # end
-
     def graft(target, parent, **attributes)
       action :graft, target: target, attributes: attributes.merge(parent: parent)
     end
@@ -32,15 +28,6 @@ module TurboPack
     def outer_html(target, html = nil, **attributes, &block)
       action :outer_html, target: target, content: html, attributes: attributes, &block
     end
-
-    # def remove()
-    # end
-
-    # def prepend()
-    # end
-
-    # def replace()
-    # end
 
     def text_content(target, text, **attributes)
       action :text_content, target: target, attributes: attributes.merge(text: text)
@@ -78,9 +65,6 @@ module TurboPack
     def set_style(target, style, **attributes)
       action :set_property, target: target, attributes: attributes.merge(style: style)
     end
-
-    # def set_styles()
-    # end
 
     def set_value(target, value, **attributes)
       action :set_value, target: target, attribtues: attributes.merge(value: value)
