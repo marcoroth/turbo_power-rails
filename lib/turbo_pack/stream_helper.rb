@@ -1,3 +1,5 @@
+require "turbo-rails"
+
 module TurboPack
   module StreamHelper
 
@@ -196,3 +198,5 @@ module TurboPack
 
   end
 end
+
+Turbo::Streams::TagBuilder.prepend(TurboPack::StreamHelper)
