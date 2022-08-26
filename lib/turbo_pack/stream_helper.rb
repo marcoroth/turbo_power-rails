@@ -6,31 +6,31 @@ module TurboPack
     # DOM Mutations
 
     def graft(target, parent, **attributes)
-      action :graft, target: target, attributes: attributes.merge(parent: parent)
+      action_all :graft, targets: target, attributes: attributes.merge(parent: parent)
     end
 
     def inner_html(target, html = nil, **attributes, &block)
-      action :inner_html, target: target, content: html, attributes: attributes, &block
+      action_all :inner_html, targets: target, content: html, attributes: attributes, &block
     end
 
     def insert_adjacent_html(target, html = nil, position: 'beforeend', **attributes, &block)
-      action :insert_adjacent_html, target: target, content: html, attributes: attributes.merge(position: position), &block
+      action_all :insert_adjacent_html, targets: target, content: html, attributes: attributes.merge(position: position), &block
     end
 
     def insert_adjacent_text(target, text, position: 'beforebegin', **attributes)
-      action :insert_adjacent_text, target: target, attributes: attributes.merge(text: text, position: position)
+      action_all :insert_adjacent_text, targets: target, content: "", attributes: attributes.merge(text: text, position: position)
     end
 
     def morph(target, html = nil, **attribtues, &block)
-      action :morph, target: target, content: html, attributes: attributes, &block
+      action_all :morph, targets: target, content: html, attributes: attributes, &block
     end
 
     def outer_html(target, html = nil, **attributes, &block)
-      action :outer_html, target: target, content: html, attributes: attributes, &block
+      action_all :outer_html, targets: target, content: html, attributes: attributes, &block
     end
 
     def text_content(target, text, **attributes)
-      action :text_content, target: target, attributes: attributes.merge(text: text)
+      action_all :text_content, targets: target, attributes: attributes.merge(text: text)
     end
 
 
@@ -38,43 +38,43 @@ module TurboPack
 
 
     def add_css_class(target, classes, **attributes)
-      action :add_css_class, target: target, attributes: attributes.merge(classes: classes)
+      action_all :add_css_class, targets: target, attributes: attributes.merge(classes: classes)
     end
 
     def remove_attribute(target, attribute, **attributes)
-      action :remove_attribute, target: target, attributes: attributes.merge(attribute: attribute)
+      action_all :remove_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
     end
 
     def remove_css_class(target, classes, **attributes)
-      action :remove_css_class, target: target, attributes: attributes.merge(classes: classes)
+      action_all :remove_css_class, targets: target, attributes: attributes.merge(classes: classes)
     end
 
     def set_attribute(target, attribute, **attributes)
-      action :set_attribute, target: target, attributes: attributes.merge(attribute: attribute)
+      action_all :set_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
     end
 
     def set_dataset_attribute(target, attribute, **attributes)
-      action :set_dataset_attribute, target, attributes: attributes.merge(attribute: attribute)
+      action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
     end
     alias :set_dataset_property :set_dataset_attribute
 
     def set_property(target, property, **attributes)
-      action :set_property, target: target, attributes: attributes.merge(property: property)
+      action_all :set_property, targets: target, attributes: attributes.merge(property: property)
     end
 
     def set_style(target, style, **attributes)
-      action :set_property, target: target, attributes: attributes.merge(style: style)
+      action_all :set_property, targets: target, attributes: attributes.merge(style: style)
     end
 
     def set_value(target, value, **attributes)
-      action :set_value, target: target, attribtues: attributes.merge(value: value)
+      action_all :set_value, targets: target, attribtues: attributes.merge(value: value)
     end
 
 
     # DOM Events
 
     def dispatch_event(target, name, detail: {}, **attributes)
-      action :dispatch_event, target: target, attributes: attributes.merge(detail: detail)
+      action_all :dispatch_event, targets: target, attributes: attributes.merge(detail: detail)
     end
 
     def set_meta(name, content)
@@ -93,7 +93,7 @@ module TurboPack
     end
 
     def clear_session_storage(**attributes)
-      clear_storage("sesion", **attributes)
+      clear_storage("session", **attributes)
     end
 
 
@@ -134,7 +134,7 @@ module TurboPack
     end
 
     def scroll_into_view(target, inline = "nearest")
-      action :relaod, target: target, attributes: attributes.merge(inline: inline)
+      action_all :relaod, targets: target, attributes: attributes.merge(inline: inline)
     end
 
     def set_cookie(cookie, **attributes)
@@ -146,7 +146,7 @@ module TurboPack
     end
 
     def set_focus(target, **attributes)
-      action :set_focus, target: target, attributes: attributes
+      action_all :set_focus, targets: target, attributes: attributes
     end
 
 
