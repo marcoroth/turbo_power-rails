@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/marcoroth/turbo-rails.git
-  revision: 325a91087dc546679700d69d8dc4d6f5be3d6fb9
-  branch: turbo-stream-additional-attributes
+  revision: ba0c355b74441778f35b58608e2baafc6c0b3c46
+  branch: custom-action-helpers
   specs:
     turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
