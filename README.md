@@ -12,7 +12,19 @@ This is very much a work in progress right now. There are some open Pull Request
 
 This also requires `@hotwired/rails >= 7.2.0-beta.2`.
 
-**Also:** I can't guarantee that the current API stays that way, there might be even more ways to improve it. 
+**Also:** I can't guarantee that the current API stays that way, there might be even more ways to improve it.
+
+### Workaround for the open Pull Requests
+
+Then only workaround to play with this gem right now is to point the gem against GitHub repos:
+
+```ruby
+# Gemfile
+
+gem "turbo-rails", github: "marcoroth/turbo-rails", branch: "custom-action-helpers"
+gem "turbo_power", github: "marcoroth/turbo_pack-rails", branch: "main"
+gem "turbo_ready", github: "marcoroth/turbo_ready", branch: "main"
+```
 
 ## Installation
 
