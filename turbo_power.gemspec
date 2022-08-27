@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir["test/**/*.rb"]
 
   spec.add_dependency "turbo-rails"
+  spec.add_dependency "turbo_ready"
 end
