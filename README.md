@@ -30,11 +30,11 @@ import * as Turbo from '@hotwired/turbo'
 
 ### Actions from `turbo_ready`
 
-* [`tubro_stream.invoke(method, *args, selector: nil, camelize: true, id: nil)`](https://github.com/hopsoft/turbo_ready)
+* [`turbo_stream.invoke(method, *args, selector: nil, camelize: true, id: nil)`](https://github.com/hopsoft/turbo_ready)
 
 ### Actions from `turbo-morph`
 
-* [`tubro_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
+* [`turbo_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
 
 ### DOM Actions
 
