@@ -37,9 +37,6 @@ module TurboPower
       action :set_meta, attributes: attributes.merge(name: name, content: content)
     end
 
-    def morph(target, html = nil, **attributes, &block)
-      action_all :inner_html, targets: target, content: html, attributes: attributes, &block
-    end
 
     # Attribute Actions
 
