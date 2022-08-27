@@ -2,6 +2,18 @@
 
 `turbo_power` is a power-pack for Turbo Streams. This gem provides server-side Ruby helpers for the NPM package [`turbo_power`](https://github.com/marcoroth/turbo_power).
 
+## Important Note
+
+This is very much a work in progress right now. There are some open Pull Requests against [`turbo-rails`](https://github.com/hotwired/turbo-rails) which are needed for this to work properly:
+
+* https://github.com/hotwired/turbo-rails/pull/373
+* https://github.com/hotwired/turbo-rails/pull/374
+* https://github.com/hotwired/turbo-rails/pull/375
+
+This also requires `@hotwired/rails >= 7.2.0-beta.2`.
+
+**Also:** I can't guarantee that the current API stays that way, there might be even more ways to improve it. 
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -13,7 +25,7 @@ bundle add turbo_power
 Install the JavaScript package:
 
 ```shell
-yarn add turbo_power
+yarn add turbo_power @hotwired/turbo@next
 ```
 
 Initialize TurboPower in `application.js`:
