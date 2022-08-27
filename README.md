@@ -45,7 +45,7 @@ import * as Turbo from '@hotwired/turbo'
 * `turbo_stream.morph(target, html = nil, **attribtues, &block)`
 * `turbo_stream.outer_html(target, html = nil, **attributes, &block)`
 * `turbo_stream.text_content(target, text, **attributes)`
-* `turbo_stream.set_meta(name, content)`
+* `turbo_stream.set_meta(name, content, **attributes)`
 
 
 ### Attribute Actions
@@ -83,7 +83,7 @@ import * as Turbo from '@hotwired/turbo'
 
 * `turbo_stream.redirect_to(url, action_name = nil, **attributes)`
 * `turbo_stream.reload(**attributes)`
-* `turbo_stream.scroll_into_view(target, inline = "nearest")`
+* `turbo_stream.scroll_into_view(target, inline = "nearest", **attributes)`
 * `turbo_stream.set_cookie(cookie, **attributes)`
 * `turbo_stream.set_cookie_item(key, value, **attributes)`
 * `turbo_stream.set_focus(target, **attributes)`
@@ -98,7 +98,7 @@ import * as Turbo from '@hotwired/turbo'
 
 ### Debug Actions
 
-* `turbo_stream.console_log(message, level = :log, **attributes)`
+* `turbo_stream.console_log(message, level = 'log', **attributes)`
 * `turbo_stream.console_table(data, columns, **attributes)`
 
 ### Notification Actions

@@ -33,7 +33,7 @@ module TurboPower
       action_all :text_content, targets: target, attributes: attributes.merge(text: text)
     end
 
-    def set_meta(name, content)
+    def set_meta(name, content, **attributes)
       action :set_meta, attributes: attributes.merge(name: name, content: content)
     end
 
@@ -134,7 +134,7 @@ module TurboPower
       action :reload, attributes: attributes
     end
 
-    def scroll_into_view(target, inline = "nearest")
+    def scroll_into_view(target, inline = "nearest", **attributes)
       action_all :scroll_into_view, targets: target, attributes: attributes.merge(inline: inline)
     end
 
@@ -168,8 +168,8 @@ module TurboPower
 
     # Debug Actions
 
-    def console_log(message, level: :log)
-      action :console_log, attributes: { message: message, level: level }
+    def console_log(message, level = :log, **attributes)
+      action :console_log, attributes: attributes.merge(message: message, level: level)
     end
 
     def console_table(data, columns, **attributes)
