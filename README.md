@@ -16,7 +16,7 @@ This also requires `@hotwired/rails >= 7.2.0-beta.2`.
 
 ### Workaround for the open Pull Requests
 
-Then only workaround to play with this gem right now is to point the gem against GitHub repos:
+The only workaround to play with this gem right now is to point the gems against GitHub repos:
 
 ```ruby
 # Gemfile
