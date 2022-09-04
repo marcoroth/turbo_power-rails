@@ -150,6 +150,10 @@ module TurboPower
       action_all :set_focus, targets: target, attributes: attributes
     end
 
+    def set_title(title, **attributes)
+      action :set_title, attributes: attributes.merge(title: title)
+    end
+
 
     # Browser History Actions
 

@@ -111,6 +111,7 @@ import * as Turbo from '@hotwired/turbo'
 * `turbo_stream.set_cookie(cookie, **attributes)`
 * `turbo_stream.set_cookie_item(key, value, **attributes)`
 * `turbo_stream.set_focus(target, **attributes)`
+* `turbo_stream.set_title(title, **attributes)`
 
 
 ### Browser History Actions
