@@ -189,4 +189,4 @@ module TurboPower
   end
 end
 
-Turbo::Streams::TagBuilder.prepend(TurboPower::StreamHelper)
+# Turbo::Streams::TagBuilder.prepend(TurboPower::StreamHelper)
