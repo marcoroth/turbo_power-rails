@@ -1,6 +1,23 @@
-# TurboPower Rails
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.png">
+    <img src="assets/hero.png" height="340px">
+  </picture>
+</p>
 
-[![Tests](https://github.com/marcoroth/turbo_power-rails/actions/workflows/tests.yml/badge.svg)](https://github.com/marcoroth/turbo_power-rails/actions/workflows/tests.yml)
+<h1 align="center">TurboPower for Rails</h1>
+
+<p align="center">
+  <a href="https://github.com/marcoroth/turbo_power">
+    <img src="https://github.com/marcoroth/turbo_power-rails/actions/workflows/tests.yml/badge.svg">
+  </a>
+  <a href="https://rubygems.org/gems/turbo_power">
+    <img alt="GEM Version" src="https://img.shields.io/gem/v/turbo_power?color=38C160&logo=ruby&logoColor=FE1616">
+  </a>
+  <a href="https://rubygems.org/gems/turbo_power">
+    <img alt="Gem Downloads" src="https://img.shields.io/gem/dt/turbo_power?color=38C160&logo=ruby&logoColor=FE1616">
+  </a>
+</p>
 
 TurboPower Rails is a power-pack for Turbo Streams. This gem provides server-side Ruby helpers for the NPM package [`turbo_power`](https://github.com/marcoroth/turbo_power).
 
