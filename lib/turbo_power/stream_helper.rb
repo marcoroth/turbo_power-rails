@@ -38,7 +38,7 @@ module TurboPower
       custom_action_all :insert_adjacent_text, targets: target, content: "", attributes: attributes.merge(text: text, position: position)
     end
 
-    def morph(target, html = nil, **attribtues, &block)
+    def morph(target, html = nil, **attributes, &block)
       custom_action_all :morph, targets: target, content: html, attributes: attributes, &block
     end
 
