@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/marcoroth/turbo_power-rails"
   spec.metadata["changelog_uri"] = "https://github.com/marcoroth/turbo_power-rails/blob/main/CHANGELOG.md"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = Dir[
     "lib/**/*.{rb,rake}",
@@ -25,8 +26,6 @@ Gem::Specification.new do |spec|
     "bin/*",
     "[A-Z]*"
   ]
-
-  spec.test_files = Dir["test/**/*.rb"]
 
   spec.add_dependency "turbo-rails", "~> 1.3.0"
   spec.add_dependency "turbo_ready"
