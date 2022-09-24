@@ -1,4 +1,3 @@
-require "turbo-rails"
 
 module TurboPower
   module StreamHelper
