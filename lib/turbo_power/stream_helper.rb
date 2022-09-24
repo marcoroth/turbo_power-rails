@@ -195,6 +195,15 @@ module TurboPower
       custom_action :notification, attributes: attributes.merge(title: title, options: options)
     end
 
+    # Turbo Frame Actions
+
+    def reload_turbo_frame(frame_id, **attributes)
+      custom_action :reload_turbo_frame, target: frame_id, attributes: attributes
+    end
+
+    def set_turbo_frame_src(frame_id, src, **attributes)
+      custom_action :reload_turbo_frame, target: frame_id, attributes: attributes.merge(src: src)
+    end
   end
 end
 
