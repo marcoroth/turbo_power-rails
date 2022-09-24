@@ -19,6 +19,8 @@
   </a>
 </p>
 
+## Getting Started
+
 TurboPower Rails is a power-pack for Turbo Streams. This gem provides server-side Ruby helpers for the NPM package [`turbo_power`](https://github.com/marcoroth/turbo_power).
 
 ## Important Note
