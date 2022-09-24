@@ -4,27 +4,10 @@ TurboPower Rails is a power-pack for Turbo Streams. This gem provides server-sid
 
 ## Important Note
 
-This is very much a work in progress right now. There are some open Pull Requests against [`turbo-rails`](https://github.com/hotwired/turbo-rails) which are needed for this to work properly:
-
-* https://github.com/hotwired/turbo-rails/pull/373
-* https://github.com/hotwired/turbo-rails/pull/374
-* https://github.com/hotwired/turbo-rails/pull/375
-
-This also requires `@hotwired/rails >= 7.2.0-beta.2`.
+This is very much a work in progress right now. This requires the NPM package `@hotwired/turbo >= 7.2.0` or `@hotwired/turbo-rails >= 7.2.0` and the gem `turbo-rails >= 1.3.0`.
 
 **Also:** I can't guarantee that the current API stays that way, there might be even more ways to improve it.
 
-### Workaround for the open Pull Requests
-
-The only workaround to play with this gem right now is to point the gems against GitHub repos:
-
-```ruby
-# Gemfile
-
-gem "turbo-rails", github: "marcoroth/turbo-rails", branch: "custom-action-helpers"
-gem "turbo_power", github: "marcoroth/turbo_pack-rails", branch: "main"
-gem "turbo_ready", github: "marcoroth/turbo_ready", branch: "main"
-```
 
 ## Installation
 

@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Marco Roth"]
   spec.email = ["marco.roth@hey.com"]
 
-  spec.summary = "Powerpack for Turbo"
+  spec.summary = "Power-pack for Turbo Streams"
   spec.description = spec.summary
   spec.homepage = "https://github.com/marcoroth/turbo_power-rails"
   spec.license = "MIT"
@@ -28,6 +28,6 @@ Gem::Specification.new do |spec|
 
   spec.test_files = Dir["test/**/*.rb"]
 
-  spec.add_dependency "turbo-rails"
+  spec.add_dependency "turbo-rails", "~> 1.3.0"
   spec.add_dependency "turbo_ready"
 end
