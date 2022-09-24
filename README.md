@@ -20,7 +20,7 @@ bundle add turbo_power
 Install the JavaScript package:
 
 ```shell
-yarn add turbo_power @hotwired/turbo@next
+yarn add turbo_power
 ```
 
 Initialize TurboPower in `application.js`:
