@@ -95,7 +95,7 @@ module TurboPower
     # Event Actions
 
     def dispatch_event(target, name, detail: {}, **attributes)
-      custom_action_all :dispatch_event, targets: target, attributes: attributes.merge(detail: detail)
+      custom_action_all :dispatch_event, targets: target, attributes: attributes.merge(name: name, detail: detail)
     end
 
     # Storage Actions
