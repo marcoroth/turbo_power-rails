@@ -206,5 +206,3 @@ module TurboPower
     end
   end
 end
-
-# Turbo::Streams::TagBuilder.prepend(TurboPower::StreamHelper)
