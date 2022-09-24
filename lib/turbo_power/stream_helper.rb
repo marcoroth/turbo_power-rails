@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 
 module TurboPower
   module StreamHelper
-
     # Custom Action Helpers
 
     ## Also see:
@@ -18,7 +18,6 @@ module TurboPower
 
       turbo_stream_action_tag name, targets: targets, template: template, **attributes
     end
-
 
     # DOM Actions
 
