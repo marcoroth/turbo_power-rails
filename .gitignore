@@ -8,4 +8,5 @@ Gemfile.lock
 /pkg/
 /spec/reports/
 /tmp/
-/test/
+/test/dummy/db/combustion_test.sqlite
+/test/dummy/tmp/
