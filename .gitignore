@@ -1,3 +1,5 @@
+Gemfile.lock
+.tool-versions
 /.bundle/
 /.yardoc
 /_yardoc/
@@ -6,3 +8,4 @@
 /pkg/
 /spec/reports/
 /tmp/
+/test/
