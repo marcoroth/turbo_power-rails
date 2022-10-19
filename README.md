@@ -54,6 +54,37 @@ import * as Turbo from '@hotwired/turbo'
 +TurboPower.initialize(Turbo.StreamActions)
 ```
 
+### Installation on a stock Rails 7 install with importmaps
+
+1. `./bin/importmap pin turbo_power`
+
+2. You'll then have to make sure the following files are modified as such:
+
+**config/importmaps.rb**
+```diff
+pin "application", preload: true
+- pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
++ pin "@hotwired/turbo", to: "turbo.min.js", preload: true
+pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
+pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
+- pin "@hotwired/turbo", to: "https://ga.jspm.io/npm:@hotwired/turbo@7.2.0/dist/turbo.es2017-esm.js"
+pin "turbo_power", to: "https://ga.jspm.io/npm:turbo_power@0.1.4/dist/index.js"
++ // or use the bundled script shipped with the `turbo_power` gem
++ pin "turbo_power", to: "turbo_power.js"
+```
+
+**app/javascript/application.js**
+```diff
+- import '@hotwired/turbo-rails'
++ import { Turbo } from '@hotwired/turbo'
+import 'controllers'
++ import TurboPower from 'turbo_power'
++ TurboPower.initialize(Turbo.StreamActions)
+```
+
+**Note:** These modifications will continue to work when upgrading Turbo via the [turbo-rails](https://github.com/hotwired/turbo-rails) gem. You can [read more](https://github.com/marcoroth/turbo_power-rails/issues/2) for the reasoning behind these adjustments.
+
+
 ## Usage
 
 ### Actions from `turbo_ready`
