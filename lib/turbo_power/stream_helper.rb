@@ -202,7 +202,7 @@ module TurboPower
     end
 
     def set_turbo_frame_src(frame_id, src, **attributes)
-      custom_action :reload_turbo_frame, target: frame_id, attributes: attributes.merge(src: src)
+      custom_action :set_turbo_frame_src, target: frame_id, attributes: attributes.merge(src: src)
     end
   end
 end
