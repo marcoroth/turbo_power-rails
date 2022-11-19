@@ -147,6 +147,7 @@ import 'controllers'
 * `turbo_stream.set_cookie_item(key, value, **attributes)`
 * `turbo_stream.set_focus(target, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
+* `turbo_stream.turbo_clear_cache()`
 
 
 ### Browser History Actions
