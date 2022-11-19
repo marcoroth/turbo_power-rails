@@ -167,8 +167,8 @@ import 'controllers'
 
 ### Turbo Frame Actions
 
-* `turbo_stream.reload_turbo_frame(frame_id, **attributes)`
-* `turbo_stream.set_turbo_frame_src(frame_id, src, **attributes)`
+* `turbo_stream.turbo_frame_reload(frame_id, **attributes)`
+* `turbo_stream.turbo_frame_set_src(frame_id, src, **attributes)`
 
 ## Development
 
