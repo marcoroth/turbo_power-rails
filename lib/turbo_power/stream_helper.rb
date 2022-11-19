@@ -165,6 +165,10 @@ module TurboPower
       custom_action :set_title, attributes: attributes.merge(title: title)
     end
 
+    def turbo_clear_cache(**attributes)
+      custom_action :turbo_clear_cache, attributes: attributes
+    end
+
     # Browser History Actions
 
     def history_go(delta, **attributes)
