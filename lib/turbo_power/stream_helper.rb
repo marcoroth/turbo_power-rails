@@ -201,12 +201,12 @@ module TurboPower
 
     # Turbo Frame Actions
 
-    def reload_turbo_frame(frame_id, **attributes)
-      custom_action :reload_turbo_frame, target: frame_id, attributes: attributes
+    def turbo_frame_reload(frame_id, **attributes)
+      custom_action :turbo_frame_reload, target: frame_id, attributes: attributes
     end
 
-    def set_turbo_frame_src(frame_id, src, **attributes)
-      custom_action :set_turbo_frame_src, target: frame_id, attributes: attributes.merge(src: src)
+    def turbo_frame_set_src(frame_id, src, **attributes)
+      custom_action :turbo_frame_set_src, target: frame_id, attributes: attributes.merge(src: src)
     end
   end
 end
