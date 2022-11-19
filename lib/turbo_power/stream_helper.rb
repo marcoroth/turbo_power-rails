@@ -137,8 +137,8 @@ module TurboPower
 
     # Browser Actions
 
-    def redirect_to(url, action_name = nil, **attributes)
-      custom_action :redirect_to, attributes: attributes.merge(url: url, action: action_name)
+    def redirect_to(url, turbo_action = "advance", **attributes)
+      custom_action :redirect_to, attributes: attributes.merge(url: url, turbo_action: turbo_action)
     end
 
     def reload(**attributes)

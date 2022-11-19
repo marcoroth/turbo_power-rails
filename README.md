@@ -140,7 +140,7 @@ import 'controllers'
 
 ### Browser Actions
 
-* `turbo_stream.redirect_to(url, action_name = nil, **attributes)`
+* `turbo_stream.redirect_to(url, turbo_action = "advance", **attributes)`
 * `turbo_stream.reload(**attributes)`
 * `turbo_stream.scroll_into_view(target, inline = "nearest", **attributes)`
 * `turbo_stream.set_cookie(cookie, **attributes)`
