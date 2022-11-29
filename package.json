@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "turbo_power-rails",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Power-pack for Turbo Streams",
   "license": "MIT",
   "author": "Marco Roth <marco.roth@hey.com>",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@hotwired/turbo": "^7.2.2",
-    "turbo_power": "^0.1.4"
+    "turbo_power": "^0.1.6"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.0.1",

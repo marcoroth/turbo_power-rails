@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@alpinejs/morph@>=3.10.4":
+  version "3.10.5"
+  resolved "https://registry.yarnpkg.com/@alpinejs/morph/-/morph-3.10.5.tgz#855bf3352250148f73158780a8f27bbd5ee95d05"
+  integrity sha512-NQmC1vFwvNbVke1Io6rp6A0Hxgy3iz1xsyqjBZmMJVM5eYaYUwJJXR9N0hFzUTAt4KfzPZpeabwaiduKaEuxBQ==
+
 "@babel/code-frame@^7.10.4":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
@@ -106,10 +111,29 @@
   dependencies:
     "@types/node" "*"
 
+"@vue/reactivity@~3.1.1":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.5.tgz#dbec4d9557f7c8f25c2635db1e23a78a729eb991"
+  integrity sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==
+  dependencies:
+    "@vue/shared" "3.1.5"
+
+"@vue/shared@3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
+  integrity sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==
+
 acorn@^8.5.0:
   version "8.8.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
+
+alpinejs@>=3.10.4:
+  version "3.10.5"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.10.5.tgz#59ca09ad42293cc8e0bbbdf4c7696fc22c6df700"
+  integrity sha512-qlvnal44Gof2XVfm/lef8fYpXKxR9fjdSki7aFB/9THyFvbsRKZ6lM5SjxXpIs7B0faJt7bgpK2K25gzrraXJw==
+  dependencies:
+    "@vue/reactivity" "~3.1.1"
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -324,20 +348,23 @@ terser@^5.0.0:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
-turbo-morph@^0.1.0-beta.3:
+turbo-morph@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/turbo-morph/-/turbo-morph-0.1.0.tgz#1db6900ea5a96780e94915d3bcb9c9b0e45c442e"
   integrity sha512-+T7KQySPZS3MQYm4zHrAvGV7pdL8d/Tn5Dq51WlUNp6CCEQgWjS9ruiGbU1rb/pvFJa51HBm0tEH4aJiNxIrIQ==
 
-turbo_power@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/turbo_power/-/turbo_power-0.1.4.tgz#0f71cb78006829bc613e10a9a6132ba074be99ae"
-  integrity sha512-lcbddY4Edp9wMhm78kf/loMqqPTkq7WPPTf4grpgzDu0c5QIRnNNEFC1tmbAVERlvS0xr25jmhTZLuDS3WOFpA==
+turbo_power@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/turbo_power/-/turbo_power-0.1.6.tgz#a535afc5b3738ef24ec8042fed36c1a46c64e58f"
+  integrity sha512-fXw5e8WKrjPdxF8C8GqzchnyI3NbOzQa7z4QKaInKNg0tiDHw9H/bFnxO4H0LnYXH58dw88MQHLFlzVxL9heoQ==
   dependencies:
-    turbo-morph "^0.1.0-beta.3"
-    turbo_ready "^0.0.6"
+    turbo-morph "^0.1.0"
+    turbo_ready "^0.1.0"
 
-turbo_ready@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/turbo_ready/-/turbo_ready-0.0.6.tgz#7e3f01e4af26e38e5dad3291d6307ba82be220ff"
-  integrity sha512-cyHh5VZjRxdsGPckRMmYbaDwkKY0O59I0Lp/uWffYNbAU70GofTJ6dUP1mjnkrYNVa5UA7sAUcKWXkz6rQnUYg==
+turbo_ready@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/turbo_ready/-/turbo_ready-0.1.2.tgz#0aa812c0661073106e6efea2f1af41d7b6786e44"
+  integrity sha512-CwJJ2sz72cuNBQuECH2K3H8R9Zb8d3jppK61+i+PwMxPXM8dyL3Rj4K23JPR5RnUBQGIPwxmAVdmPXQxQJoYCA==
+  dependencies:
+    "@alpinejs/morph" ">=3.10.4"
+    alpinejs ">=3.10.4"
