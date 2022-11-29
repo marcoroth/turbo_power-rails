@@ -140,15 +140,12 @@ import 'controllers'
 
 ### Browser Actions
 
-* `turbo_stream.redirect_to(url, turbo_action = "advance", **attributes)`
 * `turbo_stream.reload(**attributes)`
 * `turbo_stream.scroll_into_view(target, inline = "nearest", **attributes)`
 * `turbo_stream.set_cookie(cookie, **attributes)`
 * `turbo_stream.set_cookie_item(key, value, **attributes)`
 * `turbo_stream.set_focus(target, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
-* `turbo_stream.turbo_clear_cache()`
-
 
 ### Browser History Actions
 
@@ -170,6 +167,11 @@ import 'controllers'
 
 * `turbo_stream.turbo_frame_reload(frame_id, **attributes)`
 * `turbo_stream.turbo_frame_set_src(frame_id, src, **attributes)`
+
+### Turbo Actions
+
+* `turbo_stream.redirect_to(url, turbo_action = "advance", **attributes)`
+* `turbo_stream.turbo_clear_cache()`
 
 ## Development
 
