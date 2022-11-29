@@ -54,6 +54,35 @@ import * as Turbo from '@hotwired/turbo'
 +TurboPower.initialize(Turbo.StreamActions)
 ```
 
+### Installation on a stock Rails 7 install with importmaps
+
+1. `./bin/importmap pin turbo_power`
+
+2. You'll then have to make sure the following files are modified as such:
+
+**config/importmaps.rb**
+```diff
+pin "application", preload: true
+- pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
++ pin "@hotwired/turbo", to: "turbo.min.js", preload: true
+pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
+pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
+- pin "@hotwired/turbo", to: "https://ga.jspm.io/npm:@hotwired/turbo@7.2.0/dist/turbo.es2017-esm.js"
+pin "turbo_power", to: "https://ga.jspm.io/npm:turbo_power@0.1.6/dist/index.js"
+```
+
+**app/javascript/application.js**
+```diff
+- import '@hotwired/turbo-rails'
++ import { Turbo } from '@hotwired/turbo'
+import 'controllers'
++ import TurboPower from 'turbo_power'
++ TurboPower.initialize(Turbo.StreamActions)
+```
+
+**Note:** These modifications will continue to work when upgrading Turbo via the [turbo-rails](https://github.com/hotwired/turbo-rails) gem. You can [read more](https://github.com/marcoroth/turbo_power-rails/issues/2) for the reasoning behind these adjustments.
+
+
 ## Usage
 
 ### Actions from `turbo_ready`
@@ -109,14 +138,12 @@ import * as Turbo from '@hotwired/turbo'
 
 ### Browser Actions
 
-* `turbo_stream.redirect_to(url, action_name = nil, **attributes)`
 * `turbo_stream.reload(**attributes)`
 * `turbo_stream.scroll_into_view(target, inline = "nearest", **attributes)`
 * `turbo_stream.set_cookie(cookie, **attributes)`
 * `turbo_stream.set_cookie_item(key, value, **attributes)`
 * `turbo_stream.set_focus(target, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
-
 
 ### Browser History Actions
 
@@ -136,8 +163,13 @@ import * as Turbo from '@hotwired/turbo'
 
 ### Turbo Frame Actions
 
-* `turbo_stream.reload_turbo_frame(frame_id, **attributes)`
-* `turbo_stream.set_turbo_frame_src(frame_id, src, **attributes)`
+* `turbo_stream.turbo_frame_reload(frame_id, **attributes)`
+* `turbo_stream.turbo_frame_set_src(frame_id, src, **attributes)`
+
+### Turbo Actions
+
+* `turbo_stream.redirect_to(url, turbo_action = "advance", **attributes)`
+* `turbo_stream.turbo_clear_cache()`
 
 ## Development
 

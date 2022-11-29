@@ -137,8 +137,8 @@ module TurboPower
 
     # Browser Actions
 
-    def redirect_to(url, action_name = nil, **attributes)
-      custom_action :redirect_to, attributes: attributes.merge(url: url, action: action_name)
+    def redirect_to(url, turbo_action = "advance", **attributes)
+      custom_action :redirect_to, attributes: attributes.merge(url: url, turbo_action: turbo_action)
     end
 
     def reload(**attributes)
@@ -163,6 +163,10 @@ module TurboPower
 
     def set_title(title, **attributes)
       custom_action :set_title, attributes: attributes.merge(title: title)
+    end
+
+    def turbo_clear_cache(**attributes)
+      custom_action :turbo_clear_cache, attributes: attributes
     end
 
     # Browser History Actions
@@ -197,12 +201,12 @@ module TurboPower
 
     # Turbo Frame Actions
 
-    def reload_turbo_frame(frame_id, **attributes)
-      custom_action :reload_turbo_frame, target: frame_id, attributes: attributes
+    def turbo_frame_reload(frame_id, **attributes)
+      custom_action :turbo_frame_reload, target: frame_id, attributes: attributes
     end
 
-    def set_turbo_frame_src(frame_id, src, **attributes)
-      custom_action :reload_turbo_frame, target: frame_id, attributes: attributes.merge(src: src)
+    def turbo_frame_set_src(frame_id, src, **attributes)
+      custom_action :turbo_frame_set_src, target: frame_id, attributes: attributes.merge(src: src)
     end
   end
 end
