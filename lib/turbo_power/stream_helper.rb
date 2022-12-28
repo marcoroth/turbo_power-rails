@@ -7,16 +7,12 @@ module TurboPower
     ## Also see:
     ## => https://github.com/hotwired/turbo-rails/pull/374
 
-    def custom_action(name, target: nil, content: nil, allow_inferred_rendering: true, attributes: {}, **rendering, &block)
-      template = render_template(target, content, allow_inferred_rendering: allow_inferred_rendering, **rendering, &block)
-
-      turbo_stream_action_tag name, target: target, template: template, **attributes
+    def custom_action(name, target: nil, content: nil, attributes: {})
+      turbo_stream_action_tag name, target: target, template: content, **attributes
     end
 
-    def custom_action_all(name, targets: nil, content: nil, allow_inferred_rendering: true, attributes: {}, **rendering, &block)
-      template = render_template(targets, content, allow_inferred_rendering: allow_inferred_rendering, **rendering, &block)
-
-      turbo_stream_action_tag name, targets: targets, template: template, **attributes
+    def custom_action_all(name, targets: nil, content: nil, attributes: {})
+      turbo_stream_action_tag name, targets: targets, template: content, **attributes
     end
 
     # DOM Actions
