@@ -88,7 +88,7 @@ module TurboPower
     end
 
     def set_value(target, value, **attributes)
-      custom_action_all :set_value, targets: target, attribtues: attributes.merge(value: value)
+      custom_action_all :set_value, targets: target, attributes: attributes.merge(value: value)
     end
 
     # Event Actions
