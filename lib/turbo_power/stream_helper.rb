@@ -71,8 +71,8 @@ module TurboPower
       custom_action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
     end
 
-    def set_property(target, property, value, **attributes)
-      custom_action_all :set_property, targets: target, attributes: attributes.merge(property: property, value: value)
+    def set_property(target, name, value, **attributes)
+      custom_action_all :set_property, targets: target, attributes: attributes.merge(name: name, value: value)
     end
 
     def set_style(target, name, value, **attributes)

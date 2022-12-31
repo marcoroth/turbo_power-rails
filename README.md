@@ -112,7 +112,7 @@ import 'controllers'
 * `turbo_stream.remove_css_class(target, classes, **attributes)`
 * `turbo_stream.set_attribute(target, attribute, value, **attributes)`
 * `turbo_stream.set_dataset_attribute(target, attribute, value, **attributes)`
-* `turbo_stream.set_property(target, property, value, **attributes)`
+* `turbo_stream.set_property(target, name, value, **attributes)`
 * `turbo_stream.set_style(target, name, value, **attributes)`
 * `turbo_stream.set_styles(target, styles, **attributes)`
 * `turbo_stream.set_value(target, value, **attributes)`
