@@ -28,5 +28,4 @@ Gem::Specification.new do |spec|
   ]
 
   spec.add_dependency "turbo-rails", "~> 1.3.0"
-  spec.add_dependency "turbo_ready"
 end

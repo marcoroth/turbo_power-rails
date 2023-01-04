@@ -83,19 +83,12 @@ import 'controllers'
 **Note:** These modifications will continue to work when upgrading Turbo via the [turbo-rails](https://github.com/hotwired/turbo-rails) gem. You can [read more](https://github.com/marcoroth/turbo_power-rails/issues/2) for the reasoning behind these adjustments.
 
 
-## Usage
-
-### Actions from `turbo_ready`
-
-* [`turbo_stream.invoke(method, *args, selector: nil, camelize: true, id: nil)`](https://github.com/hopsoft/turbo_ready)
-
-### Actions from `turbo-morph`
-
-* [`turbo_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
+## Custom Actions
 
 ### DOM Actions
 
 * `turbo_stream.graft(target, parent, **attributes)`
+* [`turbo_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
 * `turbo_stream.inner_html(target, html = nil, **attributes, &block)`
 * `turbo_stream.insert_adjacent_html(target, html = nil, position: 'beforeend', **attributes, &block)`
 * `turbo_stream.insert_adjacent_text(target, text, position: 'beforebegin', **attributes)`
