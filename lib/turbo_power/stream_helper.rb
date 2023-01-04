@@ -93,6 +93,12 @@ module TurboPower
       custom_action_all :dispatch_event, targets: target, attributes: attributes.merge(name: name), content: detail.to_json
     end
 
+    # Form Actions
+
+    def reset_form(target, **attributes)
+      custom_action_all :reset_form, targets: target, attributes: attributes
+    end
+
     # Storage Actions
 
     def clear_storage(type, **attributes)
