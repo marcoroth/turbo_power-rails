@@ -14,7 +14,7 @@ module TurboPower
     end
 
     test "reset_form" do
-      stream = %(<turbo-stream action="reset_form" targets="#form"></turbo-stream>)
+      stream = %(<turbo-stream action="reset_form" targets="#form"><template></template></turbo-stream>)
 
       assert_dom_equal stream, turbo_stream.reset_form("#form")
     end
