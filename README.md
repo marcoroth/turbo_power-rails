@@ -123,6 +123,11 @@ import 'controllers'
 * `turbo_stream.dispatch_event(target, name, detail: {}, **attributes)`
 
 
+### Form Actions
+
+* `turbo_stream.reset_form(target, **attributes)`
+
+
 ### Storage Actions
 
 * `turbo_stream.clear_storage(type, **attributes)`
@@ -145,6 +150,7 @@ import 'controllers'
 * `turbo_stream.set_focus(target, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
 
+
 ### Browser History Actions
 
 * `turbo_stream.history_go(delta, **attributes)`
@@ -157,19 +163,23 @@ import 'controllers'
 * `turbo_stream.console_log(message, level = 'log', **attributes)`
 * `turbo_stream.console_table(data, columns, **attributes)`
 
+
 ### Notification Actions
 
 * `turbo_stream.notification(title, options, **attributes)`
+
 
 ### Turbo Frame Actions
 
 * `turbo_stream.turbo_frame_reload(frame_id, **attributes)`
 * `turbo_stream.turbo_frame_set_src(frame_id, src, **attributes)`
 
+
 ### Turbo Actions
 
 * `turbo_stream.redirect_to(url, turbo_action = "advance", **attributes)`
 * `turbo_stream.turbo_clear_cache()`
+
 
 ## Development
 
