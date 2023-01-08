@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "turbo-rails"
+require "phlex-rails"
+require "turbo/ruby"
 require "turbo_ready"
 
 require_relative "turbo_power/version"
