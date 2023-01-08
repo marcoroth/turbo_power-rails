@@ -1,6 +1,43 @@
 # frozen_string_literal: true
 
 module TurboPower
+
+  class StreamHelperClass
+    def initialize(buffer = nil)
+      @buffer = buffer || String.new
+    end
+
+    def to_s
+      @buffer.to_s
+    end
+
+    def morph(...)
+      @buffer << self.class.morph(...)
+    end
+
+    def console_log(...)
+      @buffer << self.class.console_log(...)
+    end
+
+    def self.morph(target:, content: nil, html: nil, **attributes, &block)
+      Turbo::Elements::TurboStream.new(action: "morph", targets: target, content: content || html, **attributes, &block).to_html
+    end
+
+    def self.console_log(message:, level: :log, **attributes)
+      Turbo::Elements::TurboStream.new(action: "console_log", attributes: attributes.merge(message: message, level: level)).to_html
+    end
+  end
+
+  class StreamsBuilder
+    def self.render(&block)
+      turbo_stream = StreamHelperClass.new
+
+      yield turbo_stream if block_given?
+
+      turbo_stream.to_s
+    end
+  end
+
   module StreamHelper
     # Custom Action Helpers
 

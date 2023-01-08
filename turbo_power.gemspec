@@ -27,6 +27,8 @@ Gem::Specification.new do |spec|
     "[A-Z]*"
   ]
 
+  spec.add_dependency "phlex-rails", "~> 0.4"
   spec.add_dependency "turbo-rails", "~> 1.3.0"
   spec.add_dependency "turbo_ready"
+  spec.add_dependency "turbo-ruby", "~> 0.1"
 end
