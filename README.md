@@ -95,7 +95,7 @@ import 'controllers'
 * `turbo_stream.morph(target, html = nil, **attribtues, &block)`
 * `turbo_stream.outer_html(target, html = nil, **attributes, &block)`
 * `turbo_stream.text_content(target, text, **attributes)`
-* `turbo_stream.set_meta(name, content, **attributes)`
+* `turbo_stream.set_meta(name, content)`
 
 
 ### Attribute Actions
@@ -105,7 +105,7 @@ import 'controllers'
 * `turbo_stream.remove_css_class(target, classes, **attributes)`
 * `turbo_stream.set_attribute(target, attribute, value, **attributes)`
 * `turbo_stream.set_dataset_attribute(target, attribute, value, **attributes)`
-* `turbo_stream.set_property(target, name, value, **attributes)`
+* `turbo_stream.set_property(target, property, value, **attributes)`
 * `turbo_stream.set_style(target, name, value, **attributes)`
 * `turbo_stream.set_styles(target, styles, **attributes)`
 * `turbo_stream.set_value(target, value, **attributes)`
@@ -137,11 +137,15 @@ import 'controllers'
 ### Browser Actions
 
 * `turbo_stream.reload(**attributes)`
-* `turbo_stream.scroll_into_view(target, inline = "nearest", **attributes)`
-* `turbo_stream.set_cookie(cookie, **attributes)`
-* `turbo_stream.set_cookie_item(key, value, **attributes)`
+* `turbo_stream.scroll_into_view(target, inline = "nearest")`
 * `turbo_stream.set_focus(target, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
+
+
+### Document Actions
+
+* `turbo_stream.set_cookie(cookie, **attributes)`
+* `turbo_stream.set_cookie_item(key, value, **attributes)`
 
 
 ### Browser History Actions
@@ -153,8 +157,8 @@ import 'controllers'
 
 ### Debug Actions
 
-* `turbo_stream.console_log(message, level = 'log', **attributes)`
-* `turbo_stream.console_table(data, columns, **attributes)`
+* `turbo_stream.console_log(message, level = :log)`
+* `turbo_stream.console_table(data, columns)`
 
 
 ### Notification Actions
@@ -164,13 +168,13 @@ import 'controllers'
 
 ### Turbo Frame Actions
 
-* `turbo_stream.turbo_frame_reload(frame_id, **attributes)`
-* `turbo_stream.turbo_frame_set_src(frame_id, src, **attributes)`
+* `turbo_stream.turbo_frame_reload(frame_id)`
+* `turbo_stream.turbo_frame_set_src(frame_id, src)`
 
 
 ### Turbo Actions
 
-* `turbo_stream.redirect_to(url, turbo_action = "advance", **attributes)`
+* `turbo_stream.redirect_to(url, turbo_action = nil, **attributes)`
 * `turbo_stream.turbo_clear_cache()`
 
 
