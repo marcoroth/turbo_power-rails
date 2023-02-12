@@ -54,5 +54,41 @@ module TurboPower
 
       assert_dom_equal stream, turbo_stream.turbo_progress_bar_set_value(1)
     end
+
+    test "redirect_to default" do
+      stream = %(<turbo-stream action="redirect_to" turbo-action="advance" url="http://localhost:8080"><template></template></turbo-stream>)
+
+      assert_dom_equal stream, turbo_stream.redirect_to("http://localhost:8080")
+    end
+
+    test "redirect_to with turbo=false" do
+      stream = %(<turbo-stream turbo="false" turbo-action="advance" url="http://localhost:8080" action="redirect_to"><template></template></turbo-stream>)
+
+      assert_dom_equal stream, turbo_stream.redirect_to("http://localhost:8080", turbo: false)
+    end
+
+    test "redirect_to with action=replace" do
+      stream = %(<turbo-stream turbo-action="replace" url="http://localhost:8080" action="redirect_to"><template></template></turbo-stream>)
+
+      assert_dom_equal stream, turbo_stream.redirect_to("http://localhost:8080", "replace")
+    end
+
+    test "redirect_to with turbo_action=replace" do
+      stream = %(<turbo-stream turbo-action="replace" url="http://localhost:8080" action="redirect_to"><template></template></turbo-stream>)
+
+      assert_dom_equal stream, turbo_stream.redirect_to("http://localhost:8080", turbo_action: "replace")
+    end
+
+    test "turbo_clear_cache" do
+      stream = %(<turbo-stream action="turbo_clear_cache"><template></template></turbo-stream>)
+
+      assert_dom_equal stream, turbo_stream.turbo_clear_cache
+    end
+
+    test "attributes transformation" do
+      stream = %(<turbo-stream action="turbo_clear_cache" some-key="abc" another-key="abc" a-third-key="abc"><template></template></turbo-stream>)
+
+      assert_dom_equal stream, turbo_stream.turbo_clear_cache(someKey: "abc", another_key: "abc", "a-third-key" => "abc")
+    end
   end
 end
