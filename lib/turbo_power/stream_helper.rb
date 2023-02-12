@@ -7,12 +7,16 @@ module TurboPower
     ## Also see:
     ## => https://github.com/hotwired/turbo-rails/pull/374
 
+    private def transform_attributes(attributes)
+      attributes.transform_keys { |key| key.to_s.underscore.dasherize.to_sym }
+    end
+
     def custom_action(name, target: nil, content: nil, attributes: {})
-      turbo_stream_action_tag name, target: target, template: content, **attributes
+      turbo_stream_action_tag name, target: target, template: content, **transform_attributes(attributes)
     end
 
     def custom_action_all(name, targets: nil, content: nil, attributes: {})
-      turbo_stream_action_tag name, targets: targets, template: content, **attributes
+      turbo_stream_action_tag name, targets: targets, template: content, **transform_attributes(attributes)
     end
 
     # DOM Actions
@@ -139,10 +143,6 @@ module TurboPower
 
     # Browser Actions
 
-    def redirect_to(url, turbo_action = "advance", **attributes)
-      custom_action :redirect_to, attributes: attributes.merge(url: url, turbo_action: turbo_action)
-    end
-
     def reload(**attributes)
       custom_action :reload, attributes: attributes
     end
@@ -167,9 +167,6 @@ module TurboPower
       custom_action :set_title, attributes: attributes.merge(title: title)
     end
 
-    def turbo_clear_cache(**attributes)
-      custom_action :turbo_clear_cache, attributes: attributes
-    end
 
     # Browser History Actions
 
@@ -199,6 +196,16 @@ module TurboPower
 
     def notification(title, options, **attributes)
       custom_action :notification, attributes: attributes.merge(title: title, options: options)
+    end
+
+    # Turbo Actions
+
+    def redirect_to(url, turbo_action = "advance", **attributes)
+      custom_action :redirect_to, attributes: { url: url, turbo_action: turbo_action }.merge(attributes)
+    end
+
+    def turbo_clear_cache(**attributes)
+      custom_action :turbo_clear_cache, attributes: attributes
     end
 
     # Turbo Progress Bar Actions
