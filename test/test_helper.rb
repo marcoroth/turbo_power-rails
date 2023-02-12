@@ -10,3 +10,4 @@ require "rails/test_help"
 
 require "turbo_power"
 require "turbo_stream_helper"
+require "stream_helper_test_case"
