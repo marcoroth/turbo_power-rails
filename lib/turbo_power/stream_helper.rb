@@ -153,8 +153,8 @@ module TurboPower
       custom_action :set_cookie, attributes: attributes.merge(cookie: cookie)
     end
 
-    def set_cookie_item(key, value, **attributes)
-      custom_action :set_cookie_item, attributes: attributes.merge(key: key, value: value)
+    def set_cookie_item(key = nil, value = nil, **attributes)
+      custom_action :set_cookie_item, attributes: { key: key, value: value }.merge(attributes)
     end
 
     def set_focus(target, **attributes)
