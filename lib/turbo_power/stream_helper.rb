@@ -201,6 +201,20 @@ module TurboPower
       custom_action :notification, attributes: attributes.merge(title: title, options: options)
     end
 
+    # Turbo Progress Bar Actions
+
+    def turbo_progress_bar_show(**attributes)
+      custom_action :turbo_progress_bar_show, attributes: attributes
+    end
+
+    def turbo_progress_bar_hide(**attributes)
+      custom_action :turbo_progress_bar_hide, attributes: attributes
+    end
+
+    def turbo_progress_bar_set_value(value, **attributes)
+      custom_action :turbo_progress_bar_set_value, attributes: attributes.merge(value: value)
+    end
+
     # Turbo Frame Actions
 
     def turbo_frame_reload(frame_id, **attributes)
