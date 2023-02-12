@@ -2,14 +2,12 @@
 
 module TurboPower
   module StreamHelper
+    include ::TurboPower::AttributeTransformations
+
     # Custom Action Helpers
 
     ## Also see:
     ## => https://github.com/hotwired/turbo-rails/pull/374
-
-    private def transform_attributes(attributes)
-      attributes.transform_keys { |key| key.to_s.underscore.dasherize.to_sym }
-    end
 
     def custom_action(name, target: nil, content: nil, attributes: {})
       turbo_stream_action_tag name, target: target, template: content, **transform_attributes(attributes)
@@ -167,7 +165,6 @@ module TurboPower
       custom_action :set_title, attributes: attributes.merge(title: title)
     end
 
-
     # Browser History Actions
 
     def history_go(delta, **attributes)
@@ -194,8 +191,8 @@ module TurboPower
 
     # Notification Actions
 
-    def notification(title, options, **attributes)
-      custom_action :notification, attributes: attributes.merge(title: title, options: options)
+    def notification(title = nil, **attributes)
+      custom_action :notification, attributes: { title: title }.merge(attributes)
     end
 
     # Turbo Actions
