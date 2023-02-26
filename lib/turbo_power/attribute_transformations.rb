@@ -19,7 +19,7 @@ module TurboPower
       when String
         value
       when Symbol
-        value.name
+        value.to_s
       when NilClass
         ""
       else
