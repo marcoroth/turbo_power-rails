@@ -35,6 +35,12 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.console_log("Message", level: "warn")
       end
 
+      test "console_log with message/level as positional arg and kwarg" do
+        stream = %(<turbo-stream message="Better Message" level="error" action="console_log"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.console_log("Message", "warn", message: "Better Message", level: "error")
+      end
+
       test "console_log with additional arguments" do
         stream = %(<turbo-stream level="warn" message="Message" something="else" action="console_log"><template></template></turbo-stream>)
 
