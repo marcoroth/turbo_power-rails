@@ -18,6 +18,8 @@ module TurboPower
       case value
       when String
         value
+      when Symbol
+        value.name
       when NilClass
         ""
       else
