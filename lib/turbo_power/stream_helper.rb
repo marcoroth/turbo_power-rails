@@ -181,8 +181,8 @@ module TurboPower
 
     # Debug Actions
 
-    def console_log(message, level = :log, **attributes)
-      custom_action :console_log, attributes: attributes.merge(message: message, level: level.to_s)
+    def console_log(message = nil, level = :log, **attributes)
+      custom_action :console_log, attributes: attributes.reverse_merge(message: message, level: level.to_s)
     end
 
     def console_table(data, columns, **attributes)

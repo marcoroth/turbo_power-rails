@@ -11,10 +11,28 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.console_log("Message")
       end
 
+      test "console_log with message as kwargs" do
+        stream = %(<turbo-stream level="log" message="Message" action="console_log"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.console_log(message: "Message")
+      end
+
       test "console_log with message and level" do
         stream = %(<turbo-stream level="warn" message="Message" action="console_log"><template></template></turbo-stream>)
 
         assert_dom_equal stream, turbo_stream.console_log("Message", "warn")
+      end
+
+      test "console_log with message and level as kwargs" do
+        stream = %(<turbo-stream level="warn" message="Message" action="console_log"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.console_log(message: "Message", level: "warn")
+      end
+
+      test "console_log with message as positional arg and level as kwarg" do
+        stream = %(<turbo-stream level="warn" message="Message" action="console_log"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.console_log("Message", level: "warn")
       end
     end
   end
