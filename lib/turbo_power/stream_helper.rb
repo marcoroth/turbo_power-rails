@@ -151,8 +151,8 @@ module TurboPower
       custom_action :reload, attributes: attributes
     end
 
-    def scroll_into_view(target, inline = "nearest", **attributes)
-      custom_action_all :scroll_into_view, targets: target, attributes: attributes.merge(inline: inline)
+    def scroll_into_view(targets = nil, **attributes)
+      custom_action_all :scroll_into_view, targets: targets, attributes: attributes
     end
 
     def set_cookie(cookie = nil, **attributes)

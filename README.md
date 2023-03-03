@@ -136,7 +136,7 @@ import 'controllers'
 ### Browser Actions
 
 * `turbo_stream.reload(**attributes)`
-* `turbo_stream.scroll_into_view(target, inline = "nearest")`
+* `turbo_stream.scroll_into_view(targets, **attributes)`
 * `turbo_stream.set_focus(target, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
 
