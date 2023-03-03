@@ -221,8 +221,8 @@ module TurboPower
       custom_action :turbo_progress_bar_hide, attributes: attributes
     end
 
-    def turbo_progress_bar_set_value(value, **attributes)
-      custom_action :turbo_progress_bar_set_value, attributes: attributes.merge(value: value)
+    def turbo_progress_bar_set_value(value = nil, **attributes)
+      custom_action :turbo_progress_bar_set_value, attributes: attributes.reverse_merge(value: value)
     end
 
     # Turbo Frame Actions
