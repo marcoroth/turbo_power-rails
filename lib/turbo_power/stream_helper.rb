@@ -35,8 +35,10 @@ module TurboPower
       custom_action_all :insert_adjacent_text, targets: target, content: "", attributes: attributes.merge(text: text, position: position)
     end
 
-    def morph(target, html = nil, **attributes, &block)
-      custom_action_all :morph, targets: target, content: html, attributes: attributes, &block
+    def morph(targets = nil, html = nil, **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :morph, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
     def outer_html(target, html = nil, **attributes, &block)
