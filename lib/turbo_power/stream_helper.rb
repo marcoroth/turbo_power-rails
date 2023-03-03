@@ -75,8 +75,8 @@ module TurboPower
       custom_action_all :set_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
     end
 
-    def set_dataset_attribute(target, attribute, value, **attributes)
-      custom_action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
+    def set_dataset_attribute(targets = nil, attribute = nil, value = nil, **attributes)
+      custom_action_all :set_dataset_attribute, targets: targets, attributes: attributes.reverse_merge(attribute: attribute, value: value)
     end
 
     def set_property(targets = nil, name = nil, value = nil, **attributes)
