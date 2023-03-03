@@ -53,8 +53,8 @@ module TurboPower
       custom_action_all :text_content, targets: targets, attributes: attributes.reverse_merge(text: text)
     end
 
-    def set_meta(name, content, **attributes)
-      custom_action :set_meta, attributes: attributes.merge(name: name, content: content)
+    def set_meta(name = nil, content = nil, **attributes)
+      custom_action :set_meta, attributes: attributes.reverse_merge(name: name, content: content)
     end
 
     # Attribute Actions
