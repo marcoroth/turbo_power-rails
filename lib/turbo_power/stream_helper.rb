@@ -49,8 +49,8 @@ module TurboPower
       custom_action_all :outer_html, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
-    def text_content(target, text, **attributes)
-      custom_action_all :text_content, targets: target, attributes: attributes.merge(text: text)
+    def text_content(targets = nil, text = nil, **attributes)
+      custom_action_all :text_content, targets: targets, attributes: attributes.reverse_merge(text: text)
     end
 
     def set_meta(name, content, **attributes)
