@@ -83,8 +83,8 @@ module TurboPower
       custom_action_all :set_property, targets: target, attributes: attributes.merge(name: name, value: value)
     end
 
-    def set_style(target, name, value, **attributes)
-      custom_action_all :set_style, targets: target, attributes: attributes.merge(name: name, value: value)
+    def set_style(targets = nil, name = nil, value = nil, **attributes)
+      custom_action_all :set_style, targets: targets, attributes: attributes.reverse_merge(name: name, value: value)
     end
 
     def set_styles(targets = nil, styles = nil, **attributes)
