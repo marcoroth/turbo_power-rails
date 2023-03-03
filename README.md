@@ -90,7 +90,7 @@ import 'controllers'
 * `turbo_stream.graft(targets, parent, **attributes)`
 * [`turbo_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
 * `turbo_stream.inner_html(target, html = nil, **attributes, &block)`
-* `turbo_stream.insert_adjacent_html(target, html = nil, position: 'beforeend', **attributes, &block)`
+* `turbo_stream.insert_adjacent_html(targets, html = nil, position: 'beforeend', **attributes, &block)`
 * `turbo_stream.insert_adjacent_text(target, text, position: 'beforebegin', **attributes)`
 * `turbo_stream.outer_html(target, html = nil, **attributes, &block)`
 * `turbo_stream.text_content(target, text, **attributes)`

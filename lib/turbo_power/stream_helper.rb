@@ -29,8 +29,10 @@ module TurboPower
       custom_action_all :inner_html, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
-    def insert_adjacent_html(target, html = nil, position: "beforeend", **attributes, &block)
-      custom_action_all :insert_adjacent_html, targets: target, content: html, attributes: attributes.merge(position: position), &block
+    def insert_adjacent_html(targets = nil, html = nil, position: "beforeend", **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :insert_adjacent_html, targets: targets, content: html, attributes: attributes.merge(position: position).except(:html), &block
     end
 
     def insert_adjacent_text(target, text, position: "beforebegin", **attributes)
