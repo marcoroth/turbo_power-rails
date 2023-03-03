@@ -227,8 +227,8 @@ module TurboPower
 
     # Turbo Frame Actions
 
-    def turbo_frame_reload(frame_id, **attributes)
-      custom_action :turbo_frame_reload, target: frame_id, attributes: attributes
+    def turbo_frame_reload(target = nil, **attributes)
+      custom_action :turbo_frame_reload, target: target, attributes: attributes
     end
 
     def turbo_frame_set_src(frame_id, src, **attributes)
