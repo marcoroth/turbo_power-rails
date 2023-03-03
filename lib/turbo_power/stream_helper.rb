@@ -191,8 +191,8 @@ module TurboPower
       custom_action :console_log, attributes: attributes.reverse_merge(message: message, level: level)
     end
 
-    def console_table(data, columns, **attributes)
-      custom_action :console_table, attributes: attributes.merge(data: data, columns: columns)
+    def console_table(data = [], columns = [], **attributes)
+      custom_action :console_table, attributes: attributes.reverse_merge(data: data, columns: columns)
     end
 
     # Notification Actions
