@@ -35,8 +35,8 @@ module TurboPower
       custom_action_all :insert_adjacent_html, targets: targets, content: html, attributes: attributes.merge(position: position).except(:html), &block
     end
 
-    def insert_adjacent_text(target, text, position: "beforebegin", **attributes)
-      custom_action_all :insert_adjacent_text, targets: target, content: "", attributes: attributes.merge(text: text, position: position)
+    def insert_adjacent_text(targets = nil, text = nil, position: "beforebegin", **attributes)
+      custom_action_all :insert_adjacent_text, targets: targets, attributes: attributes.reverse_merge(text: text, position: position)
     end
 
     def morph(targets = nil, html = nil, **attributes, &block)
