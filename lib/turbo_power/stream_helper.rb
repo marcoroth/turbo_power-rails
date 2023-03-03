@@ -167,6 +167,10 @@ module TurboPower
 
     # Browser History Actions
 
+    def history_back(**attributes)
+      custom_action :history_back, attributes: attributes
+    end
+
     def history_go(delta, **attributes)
       custom_action :history_go, attributes: attributes.merge(delta: delta)
     end
