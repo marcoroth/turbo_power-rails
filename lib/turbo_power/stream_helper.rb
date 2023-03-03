@@ -19,8 +19,8 @@ module TurboPower
 
     # DOM Actions
 
-    def graft(target, parent, **attributes)
-      custom_action_all :graft, targets: target, attributes: attributes.merge(parent: parent)
+    def graft(targets = nil, parent = nil, **attributes)
+      custom_action_all :graft, targets: targets, attributes: attributes.reverse_merge(parent: parent)
     end
 
     def inner_html(targets = nil, html = nil, **attributes, &block)

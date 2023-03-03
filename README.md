@@ -87,7 +87,7 @@ import 'controllers'
 
 ### DOM Actions
 
-* `turbo_stream.graft(target, parent, **attributes)`
+* `turbo_stream.graft(targets, parent, **attributes)`
 * [`turbo_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
 * `turbo_stream.inner_html(target, html = nil, **attributes, &block)`
 * `turbo_stream.insert_adjacent_html(target, html = nil, position: 'beforeend', **attributes, &block)`
