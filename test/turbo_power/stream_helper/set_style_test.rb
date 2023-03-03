@@ -29,6 +29,12 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.set_style(targets: "#element", name: "background", value: "black")
       end
 
+      test "set_style with target, name and value as kwargs" do
+        stream = %(<turbo-stream action="set_style" target="element" name="background" value="black"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.set_style(target: "element", name: "background", value: "black")
+      end
+
       test "set_style with targets/value as positional arg and kwarg" do
         stream = %(<turbo-stream action="set_style" targets="#better-element" name="color" value="white"><template></template></turbo-stream>)
 
