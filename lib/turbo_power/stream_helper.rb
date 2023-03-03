@@ -85,8 +85,8 @@ module TurboPower
       custom_action_all :set_styles, targets: target, attributes: attributes.merge(styles: styles)
     end
 
-    def set_value(target, value, **attributes)
-      custom_action_all :set_value, targets: target, attributes: attributes.merge(value: value)
+    def set_value(targets = nil, value = nil, **attributes)
+      custom_action_all :set_value, targets: targets, attributes: attributes.reverse_merge(value: value)
     end
 
     # Event Actions
