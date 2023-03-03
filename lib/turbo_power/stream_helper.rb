@@ -177,11 +177,11 @@ module TurboPower
       custom_action :history_go, attributes: attributes.reverse_merge(delta: delta)
     end
 
-    def push_state(url = nil, title = nil, state = nil, **attributes)
+    def push_state(url = nil, title = "", state = {}, **attributes)
       custom_action :push_state, attributes: attributes.reverse_merge(url: url, title: title, state: state)
     end
 
-    def replace_state(url = nil, title = nil, state = nil, **attributes)
+    def replace_state(url = nil, title = "", state = {}, **attributes)
       custom_action :replace_state, attributes: attributes.reverse_merge(url: url, title: title, state: state)
     end
 
