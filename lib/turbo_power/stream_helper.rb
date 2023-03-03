@@ -231,8 +231,8 @@ module TurboPower
       custom_action :turbo_frame_reload, target: target, attributes: attributes
     end
 
-    def turbo_frame_set_src(frame_id, src, **attributes)
-      custom_action :turbo_frame_set_src, target: frame_id, attributes: attributes.merge(src: src)
+    def turbo_frame_set_src(target = nil, src = nil, **attributes)
+      custom_action :turbo_frame_set_src, target: target, attributes: attributes.reverse_merge(src: src)
     end
   end
 end
