@@ -23,8 +23,10 @@ module TurboPower
       custom_action_all :graft, targets: target, attributes: attributes.merge(parent: parent)
     end
 
-    def inner_html(target, html = nil, **attributes, &block)
-      custom_action_all :inner_html, targets: target, content: html, attributes: attributes, &block
+    def inner_html(targets = nil, html = nil, **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :inner_html, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
     def insert_adjacent_html(target, html = nil, position: "beforeend", **attributes, &block)
