@@ -66,8 +66,8 @@ module TurboPower
       custom_action_all :add_css_class, targets: targets, attributes: attributes.merge(classes: classes)
     end
 
-    def remove_attribute(target, attribute, **attributes)
-      custom_action_all :remove_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
+    def remove_attribute(targets = nil, attribute = nil, **attributes)
+      custom_action_all :remove_attribute, targets: targets, attributes: attributes.reverse_merge(attribute: attribute)
     end
 
     def remove_css_class(targets = nil, classes = "", **attributes)
