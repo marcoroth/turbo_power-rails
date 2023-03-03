@@ -132,15 +132,15 @@ module TurboPower
       clear_storage("session", **attributes)
     end
 
-    def remove_storage_item(key, type, **attributes)
-      custom_action :remove_storage_item, attributes: attributes.merge(key: key, type: type)
+    def remove_storage_item(key = nil, type = nil, **attributes)
+      custom_action :remove_storage_item, attributes: attributes.reverse_merge(key: key, type: type)
     end
 
-    def remove_local_storage_item(key, **attributes)
+    def remove_local_storage_item(key = nil, **attributes)
       remove_storage_item(key, "local", **attributes)
     end
 
-    def remove_session_storage_item(key, **attributes)
+    def remove_session_storage_item(key = nil, **attributes)
       remove_storage_item(key, "session", **attributes)
     end
 
