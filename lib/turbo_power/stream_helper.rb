@@ -155,8 +155,8 @@ module TurboPower
       custom_action_all :scroll_into_view, targets: target, attributes: attributes.merge(inline: inline)
     end
 
-    def set_cookie(cookie, **attributes)
-      custom_action :set_cookie, attributes: attributes.merge(cookie: cookie)
+    def set_cookie(cookie = nil, **attributes)
+      custom_action :set_cookie, attributes: attributes.reverse_merge(cookie: cookie)
     end
 
     def set_cookie_item(key = nil, value = nil, **attributes)
