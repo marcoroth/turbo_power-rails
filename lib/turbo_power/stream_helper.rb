@@ -160,7 +160,7 @@ module TurboPower
     end
 
     def set_cookie_item(key = nil, value = nil, **attributes)
-      custom_action :set_cookie_item, attributes: { key: key, value: value }.merge(attributes)
+      custom_action :set_cookie_item, attributes: attributes.reverse_merge(key: key, value: value)
     end
 
     def set_focus(target, **attributes)
@@ -198,13 +198,13 @@ module TurboPower
     # Notification Actions
 
     def notification(title = nil, **attributes)
-      custom_action :notification, attributes: { title: title }.merge(attributes)
+      custom_action :notification, attributes: attributes.reverse_merge(title: title)
     end
 
     # Turbo Actions
 
     def redirect_to(url = nil, turbo_action = "advance", **attributes)
-      custom_action :redirect_to, attributes: { url: url, turbo_action: turbo_action }.merge(attributes)
+      custom_action :redirect_to, attributes: attributes.reverse_merge(url: url, turbo_action: turbo_action)
     end
 
     def turbo_clear_cache(**attributes)
