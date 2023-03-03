@@ -167,8 +167,8 @@ module TurboPower
       custom_action_all :set_focus, targets: target, attributes: attributes
     end
 
-    def set_title(title, **attributes)
-      custom_action :set_title, attributes: attributes.merge(title: title)
+    def set_title(title = nil, **attributes)
+      custom_action :set_title, attributes: attributes.reverse_merge(title: title)
     end
 
     # Browser History Actions
