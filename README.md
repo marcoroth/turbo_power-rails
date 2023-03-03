@@ -112,7 +112,7 @@ import 'controllers'
 
 ### Event Actions
 
-* `turbo_stream.dispatch_event(target, name, detail: {}, **attributes)`
+* `turbo_stream.dispatch_event(targets, name, detail: {}, **attributes)`
 
 
 ### Form Actions
