@@ -163,8 +163,8 @@ module TurboPower
       custom_action :set_cookie_item, attributes: attributes.reverse_merge(key: key, value: value)
     end
 
-    def set_focus(target, **attributes)
-      custom_action_all :set_focus, targets: target, attributes: attributes
+    def set_focus(targets = nil, **attributes)
+      custom_action_all :set_focus, targets: targets, attributes: attributes
     end
 
     def set_title(title = nil, **attributes)
