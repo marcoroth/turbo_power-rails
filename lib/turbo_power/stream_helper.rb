@@ -103,8 +103,8 @@ module TurboPower
 
     # Form Actions
 
-    def reset_form(target, **attributes)
-      custom_action_all :reset_form, targets: target, attributes: attributes
+    def reset_form(targets = nil, **attributes)
+      custom_action_all :reset_form, targets: targets, attributes: attributes
     end
 
     # Storage Actions

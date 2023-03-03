@@ -117,7 +117,7 @@ import 'controllers'
 
 ### Form Actions
 
-* `turbo_stream.reset_form(target, **attributes)`
+* `turbo_stream.reset_form(targets, **attributes)`
 
 
 ### Storage Actions
