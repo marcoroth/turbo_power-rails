@@ -104,7 +104,7 @@ import 'controllers'
 * `turbo_stream.remove_css_class(target, classes, **attributes)`
 * `turbo_stream.set_attribute(target, attribute, value, **attributes)`
 * `turbo_stream.set_dataset_attribute(target, attribute, value, **attributes)`
-* `turbo_stream.set_property(target, property, value, **attributes)`
+* `turbo_stream.set_property(targets, name, value, **attributes)`
 * `turbo_stream.set_style(targets, name, value, **attributes)`
 * `turbo_stream.set_styles(targets, styles, **attributes)`
 * `turbo_stream.set_value(target, value, **attributes)`
@@ -137,7 +137,7 @@ import 'controllers'
 
 * `turbo_stream.reload(**attributes)`
 * `turbo_stream.scroll_into_view(targets, **attributes)`
-* `turbo_stream.set_focus(target, **attributes)`
+* `turbo_stream.set_focus(targets, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
 
 
