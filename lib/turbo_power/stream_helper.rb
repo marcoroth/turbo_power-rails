@@ -120,8 +120,8 @@ module TurboPower
 
     # Storage Actions
 
-    def clear_storage(type, **attributes)
-      custom_action :clear_storage, attributes: attributes.merge(type: type)
+    def clear_storage(type = nil, **attributes)
+      custom_action :clear_storage, attributes: attributes.reverse_merge(type: type)
     end
 
     def clear_local_storage(**attributes)
