@@ -87,8 +87,10 @@ module TurboPower
       custom_action_all :set_style, targets: target, attributes: attributes.merge(name: name, value: value)
     end
 
-    def set_styles(target, styles, **attributes)
-      custom_action_all :set_styles, targets: target, attributes: attributes.merge(styles: styles)
+    def set_styles(targets = nil, styles = nil, **attributes)
+      styles = attributes[:styles] || styles
+
+      custom_action_all :set_styles, targets: targets, attributes: attributes.merge(styles: styles)
     end
 
     def set_value(targets = nil, value = nil, **attributes)
