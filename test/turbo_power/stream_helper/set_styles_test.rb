@@ -50,7 +50,7 @@ module TurboPower
       test "set_styles with styles as hash" do
         stream = %(<turbo-stream targets="#element" action="set_styles" styles="background: black; color: white"><template></template></turbo-stream>)
 
-        assert_dom_equal stream, turbo_stream.set_styles("#element", { background: "black", color: "white" })
+        assert_dom_equal stream, turbo_stream.set_styles("#element", { background: "black", color: "white" }, **{})
       end
 
       test "set_styles with styles as hash and kwarg" do

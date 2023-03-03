@@ -20,7 +20,7 @@ module TurboPower
       test "push_state with title and state" do
         stream = %(<turbo-stream action="push_state" url="/users/1" title="User 1" state="{&quot;user&quot;:1}"><template></template></turbo-stream>)
 
-        assert_dom_equal stream, turbo_stream.push_state("/users/1", "User 1", { user: 1 })
+        assert_dom_equal stream, turbo_stream.push_state("/users/1", "User 1", { user: 1 }, **{})
       end
 
       test "push_state with url kwarg" do
