@@ -43,8 +43,10 @@ module TurboPower
       custom_action_all :morph, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
-    def outer_html(target, html = nil, **attributes, &block)
-      custom_action_all :outer_html, targets: target, content: html, attributes: attributes, &block
+    def outer_html(targets = nil, html = nil, **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :outer_html, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
     def text_content(target, text, **attributes)
