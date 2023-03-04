@@ -171,6 +171,10 @@ module TurboPower
       custom_action :history_back, attributes: attributes
     end
 
+    def history_forward(**attributes)
+      custom_action :history_forward, attributes: attributes
+    end
+
     def history_go(delta, **attributes)
       custom_action :history_go, attributes: attributes.merge(delta: delta)
     end
