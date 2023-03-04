@@ -149,6 +149,8 @@ import 'controllers'
 
 ### Browser History Actions
 
+* `turbo_stream.history_back(**attributes)`
+* `turbo_stream.history_forward(**attributes)`
 * `turbo_stream.history_go(delta = 0, **attributes)`
 * `turbo_stream.push_state(url, title = "", state = {}, **attributes)`
 * `turbo_stream.replace_state(url, title = "", state = {}, **attributes)`
