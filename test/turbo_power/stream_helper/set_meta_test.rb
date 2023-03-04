@@ -34,7 +34,7 @@ module TurboPower
 
         assert_dom_equal stream, turbo_stream.set_meta("viewport", "initial-scale=1.0", name: "better-viewport", content: "better-initial-scale=2.0")
       end
-      
+
       test "set_meta with additional arguments" do
         stream = %(<turbo-stream action="set_meta" name="viewport" content="initial-scale=1.0" something="else"><template></template></turbo-stream>)
 

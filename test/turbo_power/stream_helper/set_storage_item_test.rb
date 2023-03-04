@@ -65,7 +65,6 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.set_storage_item("current-user", "1", "local", something: "else")
       end
 
-
       test "set_local_storage_item" do
         stream = %(<turbo-stream type="local" key="current-user" value="1" action="set_storage_item"><template></template></turbo-stream>)
 

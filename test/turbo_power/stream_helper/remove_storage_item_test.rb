@@ -53,7 +53,6 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.remove_storage_item("current-user", "local", something: "else")
       end
 
-
       test "remove_local_storage_item" do
         stream = %(<turbo-stream type="local" key="current-user" action="remove_storage_item"><template></template></turbo-stream>)
 

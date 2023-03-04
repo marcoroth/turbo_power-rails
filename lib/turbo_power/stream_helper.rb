@@ -97,7 +97,7 @@ module TurboPower
 
     def set_styles(targets = nil, styles = nil, **attributes)
       styles = attributes[:styles] || styles
-      styles = styles.map { |k,v| "#{k}: #{v}" }.join("; ") if styles.is_a?(Hash)
+      styles = styles.map { |k, v| "#{k}: #{v}" }.join("; ") if styles.is_a?(Hash)
 
       custom_action_all :set_styles, targets: targets, attributes: attributes.merge(styles: styles)
     end
