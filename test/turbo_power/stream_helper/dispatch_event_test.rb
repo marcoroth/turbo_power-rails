@@ -41,6 +41,12 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.dispatch_event(targets: "#element", name: "custom-event", detail: { count: 1, type: "custom", enabled: true, ids: [1, 2, 3] })
       end
 
+      test "dispatch_event with targets and name as args and kwargs" do
+        stream = %(<turbo-stream name="better-custom-event" action="dispatch_event" targets="#better-element"><template>{"count":1,"type":"custom","enabled":true,"ids":[1,2,3]}</template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.dispatch_event("#element", "custom-name", targets: "#better-element", name: "better-custom-event", detail: { count: 1, type: "custom", enabled: true, ids: [1, 2, 3] })
+      end
+
       test "dispatch_event with additional attributes" do
         stream = %(<turbo-stream name="custom-event" action="dispatch_event" targets="#element" something="else"><template>{}</template></turbo-stream>)
 

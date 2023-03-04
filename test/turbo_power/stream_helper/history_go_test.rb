@@ -53,6 +53,12 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.history_go(delta: 1)
       end
 
+      test "history_go with arg and kwarg" do
+        stream = %(<turbo-stream delta="1" action="history_go"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.history_go(0, delta: 1)
+      end
+
       test "history_go additional attribute kwarg" do
         stream = %(<turbo-stream delta="1" action="history_go" something="else"><template></template></turbo-stream>)
 
