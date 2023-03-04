@@ -3,6 +3,12 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter "/test/"
+end
+
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 require_relative "../test/dummy/config/environment"

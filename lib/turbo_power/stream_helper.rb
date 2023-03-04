@@ -19,70 +19,87 @@ module TurboPower
 
     # DOM Actions
 
-    def graft(target, parent, **attributes)
-      custom_action_all :graft, targets: target, attributes: attributes.merge(parent: parent)
+    def graft(targets = nil, parent = nil, **attributes)
+      custom_action_all :graft, targets: targets, attributes: attributes.reverse_merge(parent: parent)
     end
 
-    def inner_html(target, html = nil, **attributes, &block)
-      custom_action_all :inner_html, targets: target, content: html, attributes: attributes, &block
+    def inner_html(targets = nil, html = nil, **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :inner_html, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
-    def insert_adjacent_html(target, html = nil, position: "beforeend", **attributes, &block)
-      custom_action_all :insert_adjacent_html, targets: target, content: html, attributes: attributes.merge(position: position), &block
+    def insert_adjacent_html(targets = nil, html = nil, position: "beforeend", **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :insert_adjacent_html, targets: targets, content: html, attributes: attributes.merge(position: position).except(:html), &block
     end
 
-    def insert_adjacent_text(target, text, position: "beforebegin", **attributes)
-      custom_action_all :insert_adjacent_text, targets: target, content: "", attributes: attributes.merge(text: text, position: position)
+    def insert_adjacent_text(targets = nil, text = nil, position: "beforebegin", **attributes)
+      custom_action_all :insert_adjacent_text, targets: targets, attributes: attributes.reverse_merge(text: text, position: position)
     end
 
-    def morph(target, html = nil, **attributes, &block)
-      custom_action_all :morph, targets: target, content: html, attributes: attributes, &block
+    def morph(targets = nil, html = nil, **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :morph, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
-    def outer_html(target, html = nil, **attributes, &block)
-      custom_action_all :outer_html, targets: target, content: html, attributes: attributes, &block
+    def outer_html(targets = nil, html = nil, **attributes, &block)
+      html = attributes[:html] || html
+
+      custom_action_all :outer_html, targets: targets, content: html, attributes: attributes.except(:html), &block
     end
 
-    def text_content(target, text, **attributes)
-      custom_action_all :text_content, targets: target, attributes: attributes.merge(text: text)
+    def text_content(targets = nil, text = nil, **attributes)
+      custom_action_all :text_content, targets: targets, attributes: attributes.reverse_merge(text: text)
     end
 
-    def set_meta(name, content, **attributes)
-      custom_action :set_meta, attributes: attributes.merge(name: name, content: content)
+    def set_meta(name = nil, content = nil, **attributes)
+      custom_action :set_meta, attributes: attributes.reverse_merge(name: name, content: content)
     end
 
     # Attribute Actions
 
-    def add_css_class(target, classes, **attributes)
-      custom_action_all :add_css_class, targets: target, attributes: attributes.merge(classes: classes)
+    def add_css_class(targets = nil, classes = "", **attributes)
+      classes = attributes[:classes] || classes
+      classes = classes.join(" ") if classes.is_a?(Array)
+
+      custom_action_all :add_css_class, targets: targets, attributes: attributes.merge(classes: classes)
     end
 
-    def remove_attribute(target, attribute, **attributes)
-      custom_action_all :remove_attribute, targets: target, attributes: attributes.merge(attribute: attribute)
+    def remove_attribute(targets = nil, attribute = nil, **attributes)
+      custom_action_all :remove_attribute, targets: targets, attributes: attributes.reverse_merge(attribute: attribute)
     end
 
-    def remove_css_class(target, classes, **attributes)
-      custom_action_all :remove_css_class, targets: target, attributes: attributes.merge(classes: classes)
+    def remove_css_class(targets = nil, classes = "", **attributes)
+      classes = attributes[:classes] || classes
+      classes = classes.join(" ") if classes.is_a?(Array)
+
+      custom_action_all :remove_css_class, targets: targets, attributes: attributes.merge(classes: classes)
     end
 
-    def set_attribute(target, attribute, value, **attributes)
-      custom_action_all :set_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
+    def set_attribute(targets = nil, attribute = nil, value = nil, **attributes)
+      custom_action_all :set_attribute, targets: targets, attributes: attributes.reverse_merge(attribute: attribute, value: value)
     end
 
-    def set_dataset_attribute(target, attribute, value, **attributes)
-      custom_action_all :set_dataset_attribute, targets: target, attributes: attributes.merge(attribute: attribute, value: value)
+    def set_dataset_attribute(targets = nil, attribute = nil, value = nil, **attributes)
+      custom_action_all :set_dataset_attribute, targets: targets, attributes: attributes.reverse_merge(attribute: attribute, value: value)
     end
 
-    def set_property(target, name, value, **attributes)
-      custom_action_all :set_property, targets: target, attributes: attributes.merge(name: name, value: value)
+    def set_property(targets = nil, name = nil, value = nil, **attributes)
+      custom_action_all :set_property, targets: targets, attributes: attributes.reverse_merge(name: name, value: value)
     end
 
-    def set_style(target, name, value, **attributes)
-      custom_action_all :set_style, targets: target, attributes: attributes.merge(name: name, value: value)
+    def set_style(targets = nil, name = nil, value = nil, **attributes)
+      custom_action_all :set_style, targets: targets, attributes: attributes.reverse_merge(name: name, value: value)
     end
 
-    def set_styles(target, styles, **attributes)
-      custom_action_all :set_styles, targets: target, attributes: attributes.merge(styles: styles)
+    def set_styles(targets = nil, styles = nil, **attributes)
+      styles = attributes[:styles] || styles
+      styles = styles.map { |k, v| "#{k}: #{v}" }.join("; ") if styles.is_a?(Hash)
+
+      custom_action_all :set_styles, targets: targets, attributes: attributes.merge(styles: styles)
     end
 
     def set_value(targets = nil, value = nil, **attributes)
@@ -91,20 +108,20 @@ module TurboPower
 
     # Event Actions
 
-    def dispatch_event(target, name, detail: {}, **attributes)
-      custom_action_all :dispatch_event, targets: target, attributes: attributes.merge(name: name), content: detail.to_json
+    def dispatch_event(targets = nil, name = nil, detail: {}, **attributes)
+      custom_action_all :dispatch_event, targets: targets, content: detail.to_json, attributes: attributes.reverse_merge(name: name)
     end
 
     # Form Actions
 
-    def reset_form(target, **attributes)
-      custom_action_all :reset_form, targets: target, attributes: attributes
+    def reset_form(targets = nil, **attributes)
+      custom_action_all :reset_form, targets: targets, attributes: attributes
     end
 
     # Storage Actions
 
-    def clear_storage(type, **attributes)
-      custom_action :clear_storage, attributes: attributes.merge(type: type)
+    def clear_storage(type = nil, **attributes)
+      custom_action :clear_storage, attributes: attributes.reverse_merge(type: type)
     end
 
     def clear_local_storage(**attributes)
@@ -115,27 +132,27 @@ module TurboPower
       clear_storage("session", **attributes)
     end
 
-    def remove_storage_item(key, type, **attributes)
-      custom_action :remove_storage_item, attributes: attributes.merge(key: key, type: type)
+    def remove_storage_item(key = nil, type = nil, **attributes)
+      custom_action :remove_storage_item, attributes: attributes.reverse_merge(key: key, type: type)
     end
 
-    def remove_local_storage_item(key, **attributes)
+    def remove_local_storage_item(key = nil, **attributes)
       remove_storage_item(key, "local", **attributes)
     end
 
-    def remove_session_storage_item(key, **attributes)
+    def remove_session_storage_item(key = nil, **attributes)
       remove_storage_item(key, "session", **attributes)
     end
 
-    def set_storage_item(key, value, type, **attributes)
-      custom_action :set_storage_item, attributes: attributes.merge(key: key, type: type, value: value)
+    def set_storage_item(key = nil, value = nil, type = nil, **attributes)
+      custom_action :set_storage_item, attributes: attributes.reverse_merge(key: key, type: type, value: value)
     end
 
-    def set_local_storage_item(key, value, **attributes)
+    def set_local_storage_item(key = nil, value = nil, **attributes)
       set_storage_item(key, value, "local", **attributes)
     end
 
-    def set_session_storage_item(key, value, **attributes)
+    def set_session_storage_item(key = nil, value = nil, **attributes)
       set_storage_item(key, value, "session", **attributes)
     end
 
@@ -145,24 +162,24 @@ module TurboPower
       custom_action :reload, attributes: attributes
     end
 
-    def scroll_into_view(target, inline = "nearest", **attributes)
-      custom_action_all :scroll_into_view, targets: target, attributes: attributes.merge(inline: inline)
+    def scroll_into_view(targets = nil, **attributes)
+      custom_action_all :scroll_into_view, targets: targets, attributes: attributes
     end
 
-    def set_cookie(cookie, **attributes)
-      custom_action :set_cookie, attributes: attributes.merge(cookie: cookie)
+    def set_cookie(cookie = nil, **attributes)
+      custom_action :set_cookie, attributes: attributes.reverse_merge(cookie: cookie)
     end
 
     def set_cookie_item(key = nil, value = nil, **attributes)
-      custom_action :set_cookie_item, attributes: { key: key, value: value }.merge(attributes)
+      custom_action :set_cookie_item, attributes: attributes.reverse_merge(key: key, value: value)
     end
 
-    def set_focus(target, **attributes)
-      custom_action_all :set_focus, targets: target, attributes: attributes
+    def set_focus(targets = nil, **attributes)
+      custom_action_all :set_focus, targets: targets, attributes: attributes
     end
 
-    def set_title(title, **attributes)
-      custom_action :set_title, attributes: attributes.merge(title: title)
+    def set_title(title = nil, **attributes)
+      custom_action :set_title, attributes: attributes.reverse_merge(title: title)
     end
 
     # Browser History Actions
@@ -175,16 +192,16 @@ module TurboPower
       custom_action :history_forward, attributes: attributes
     end
 
-    def history_go(delta, **attributes)
-      custom_action :history_go, attributes: attributes.merge(delta: delta)
+    def history_go(delta = 0, **attributes)
+      custom_action :history_go, attributes: attributes.reverse_merge(delta: delta)
     end
 
-    def push_state(url, title = nil, state = nil, **attributes)
-      custom_action :push_state, attributes: attributes.merge(url: url, title: title, state: state)
+    def push_state(url = nil, title = "", state = {}, **attributes)
+      custom_action :push_state, attributes: attributes.reverse_merge(url: url, title: title, state: state)
     end
 
-    def replace_state(url, title = nil, state = nil, **attributes)
-      custom_action :replace_state, attributes: attributes.merge(url: url, title: title, state: state)
+    def replace_state(url = nil, title = "", state = {}, **attributes)
+      custom_action :replace_state, attributes: attributes.reverse_merge(url: url, title: title, state: state)
     end
 
     # Debug Actions
@@ -193,20 +210,20 @@ module TurboPower
       custom_action :console_log, attributes: attributes.reverse_merge(message: message, level: level)
     end
 
-    def console_table(data, columns, **attributes)
-      custom_action :console_table, attributes: attributes.merge(data: data, columns: columns)
+    def console_table(data = [], columns = [], **attributes)
+      custom_action :console_table, attributes: attributes.reverse_merge(data: data, columns: columns)
     end
 
     # Notification Actions
 
     def notification(title = nil, **attributes)
-      custom_action :notification, attributes: { title: title }.merge(attributes)
+      custom_action :notification, attributes: attributes.reverse_merge(title: title)
     end
 
     # Turbo Actions
 
     def redirect_to(url = nil, turbo_action = "advance", **attributes)
-      custom_action :redirect_to, attributes: { url: url, turbo_action: turbo_action }.merge(attributes)
+      custom_action :redirect_to, attributes: attributes.reverse_merge(url: url, turbo_action: turbo_action)
     end
 
     def turbo_clear_cache(**attributes)
@@ -223,18 +240,18 @@ module TurboPower
       custom_action :turbo_progress_bar_hide, attributes: attributes
     end
 
-    def turbo_progress_bar_set_value(value, **attributes)
-      custom_action :turbo_progress_bar_set_value, attributes: attributes.merge(value: value)
+    def turbo_progress_bar_set_value(value = nil, **attributes)
+      custom_action :turbo_progress_bar_set_value, attributes: attributes.reverse_merge(value: value)
     end
 
     # Turbo Frame Actions
 
-    def turbo_frame_reload(frame_id, **attributes)
-      custom_action :turbo_frame_reload, target: frame_id, attributes: attributes
+    def turbo_frame_reload(target = nil, **attributes)
+      custom_action :turbo_frame_reload, target: target, attributes: attributes
     end
 
-    def turbo_frame_set_src(frame_id, src, **attributes)
-      custom_action :turbo_frame_set_src, target: frame_id, attributes: attributes.merge(src: src)
+    def turbo_frame_set_src(target = nil, src = nil, **attributes)
+      custom_action :turbo_frame_set_src, target: target, attributes: attributes.reverse_merge(src: src)
     end
   end
 end

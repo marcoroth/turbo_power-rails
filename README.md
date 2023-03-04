@@ -87,37 +87,37 @@ import 'controllers'
 
 ### DOM Actions
 
-* `turbo_stream.graft(target, parent, **attributes)`
-* [`turbo_stream.morph(target, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
-* `turbo_stream.inner_html(target, html = nil, **attributes, &block)`
-* `turbo_stream.insert_adjacent_html(target, html = nil, position: 'beforeend', **attributes, &block)`
-* `turbo_stream.insert_adjacent_text(target, text, position: 'beforebegin', **attributes)`
-* `turbo_stream.outer_html(target, html = nil, **attributes, &block)`
-* `turbo_stream.text_content(target, text, **attributes)`
-* `turbo_stream.set_meta(name, content)`
+* `turbo_stream.graft(targets, parent, **attributes)`
+* [`turbo_stream.morph(targets, html = nil, **attributes, &block)`](https://github.com/marcoroth/turbo-morph)
+* `turbo_stream.inner_html(targets, html = nil, **attributes, &block)`
+* `turbo_stream.insert_adjacent_html(targets, html = nil, position: 'beforeend', **attributes, &block)`
+* `turbo_stream.insert_adjacent_text(targets, text, position: 'beforebegin', **attributes)`
+* `turbo_stream.outer_html(targets, html = nil, **attributes, &block)`
+* `turbo_stream.text_content(targets, text, **attributes)`
+* `turbo_stream.set_meta(name, content, **attributes)`
 
 
 ### Attribute Actions
 
-* `turbo_stream.add_css_class(target, classes, **attributes)`
-* `turbo_stream.remove_attribute(target, attribute, **attributes)`
-* `turbo_stream.remove_css_class(target, classes, **attributes)`
-* `turbo_stream.set_attribute(target, attribute, value, **attributes)`
-* `turbo_stream.set_dataset_attribute(target, attribute, value, **attributes)`
-* `turbo_stream.set_property(target, property, value, **attributes)`
-* `turbo_stream.set_style(target, name, value, **attributes)`
-* `turbo_stream.set_styles(target, styles, **attributes)`
-* `turbo_stream.set_value(target, value, **attributes)`
+* `turbo_stream.add_css_class(targets, classes, **attributes)`
+* `turbo_stream.remove_attribute(targets, attribute, **attributes)`
+* `turbo_stream.remove_css_class(targets, classes, **attributes)`
+* `turbo_stream.set_attribute(targets, attribute, value, **attributes)`
+* `turbo_stream.set_dataset_attribute(targets, attribute, value, **attributes)`
+* `turbo_stream.set_property(targets, name, value, **attributes)`
+* `turbo_stream.set_style(targets, name, value, **attributes)`
+* `turbo_stream.set_styles(targets, styles, **attributes)`
+* `turbo_stream.set_value(targets, value, **attributes)`
 
 
 ### Event Actions
 
-* `turbo_stream.dispatch_event(target, name, detail: {}, **attributes)`
+* `turbo_stream.dispatch_event(targets, name, detail: {}, **attributes)`
 
 
 ### Form Actions
 
-* `turbo_stream.reset_form(target, **attributes)`
+* `turbo_stream.reset_form(targets, **attributes)`
 
 
 ### Storage Actions
@@ -136,8 +136,8 @@ import 'controllers'
 ### Browser Actions
 
 * `turbo_stream.reload(**attributes)`
-* `turbo_stream.scroll_into_view(target, inline = "nearest")`
-* `turbo_stream.set_focus(target, **attributes)`
+* `turbo_stream.scroll_into_view(targets, **attributes)`
+* `turbo_stream.set_focus(targets, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
 
 
@@ -151,15 +151,15 @@ import 'controllers'
 
 * `turbo_stream.history_back(**attributes)`
 * `turbo_stream.history_forward(**attributes)`
-* `turbo_stream.history_go(delta, **attributes)`
-* `turbo_stream.push_state(url, title = nil, state = nil, **attributes)`
-* `turbo_stream.replace_state(url, title = nil, state = nil, **attributes)`
+* `turbo_stream.history_go(delta = 0, **attributes)`
+* `turbo_stream.push_state(url, title = "", state = {}, **attributes)`
+* `turbo_stream.replace_state(url, title = "", state = {}, **attributes)`
 
 
 ### Debug Actions
 
-* `turbo_stream.console_log(message, level = :log)`
-* `turbo_stream.console_table(data, columns)`
+* `turbo_stream.console_log(message, level = :log, **attributes)`
+* `turbo_stream.console_table(data, columns, **attributes)`
 
 
 ### Notification Actions
@@ -175,15 +175,15 @@ import 'controllers'
 
 ### Turbo Progress Bar Actions
 
-* `turbo_stream.turbo_progress_bar_show()`
-* `turbo_stream.turbo_progress_bar_hide()`
-* `turbo_stream.turbo_progress_bar_set_value(value)`
+* `turbo_stream.turbo_progress_bar_show(**attributes)`
+* `turbo_stream.turbo_progress_bar_hide(**attributes)`
+* `turbo_stream.turbo_progress_bar_set_value(value, **attributes)`
 
 
 ### Turbo Frame Actions
 
-* `turbo_stream.turbo_frame_reload(frame_id)`
-* `turbo_stream.turbo_frame_set_src(frame_id, src)`
+* `turbo_stream.turbo_frame_reload(frame_id, **attributes)`
+* `turbo_stream.turbo_frame_set_src(frame_id, src, **attributes)`
 
 
 ## Development

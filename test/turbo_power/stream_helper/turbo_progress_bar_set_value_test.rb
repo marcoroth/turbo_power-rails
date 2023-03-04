@@ -4,19 +4,7 @@ require "test_helper"
 
 module TurboPower
   module StreamHelper
-    class TurboProgressBarTest < StreamHelperTestCase
-      test "turbo_progress_bar_show" do
-        stream = %(<turbo-stream action="turbo_progress_bar_show"><template></template></turbo-stream>)
-
-        assert_dom_equal stream, turbo_stream.turbo_progress_bar_show
-      end
-
-      test "turbo_progress_bar_hide" do
-        stream = %(<turbo-stream action="turbo_progress_bar_hide"><template></template></turbo-stream>)
-
-        assert_dom_equal stream, turbo_stream.turbo_progress_bar_hide
-      end
-
+    class TurboProgressBarSetValueTest < StreamHelperTestCase
       test "turbo_progress_bar_set_value with nil" do
         stream = %(<turbo-stream value="" action="turbo_progress_bar_set_value"><template></template></turbo-stream>)
 
@@ -39,6 +27,18 @@ module TurboPower
         stream = %(<turbo-stream value="1" action="turbo_progress_bar_set_value"><template></template></turbo-stream>)
 
         assert_dom_equal stream, turbo_stream.turbo_progress_bar_set_value(1)
+      end
+
+      test "turbo_progress_bar_set_value with kwarg" do
+        stream = %(<turbo-stream value="1" action="turbo_progress_bar_set_value"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.turbo_progress_bar_set_value(value: 1)
+      end
+
+      test "turbo_progress_bar_set_value additional attribute kwarg" do
+        stream = %(<turbo-stream value="1" action="turbo_progress_bar_set_value" something="else"><template></template></turbo-stream>)
+
+        assert_dom_equal stream, turbo_stream.turbo_progress_bar_set_value(1, something: "else")
       end
     end
   end
