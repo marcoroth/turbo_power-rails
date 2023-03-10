@@ -11,5 +11,9 @@ module TurboPower
     initializer "turbo_power.broadcasts", after: :initialize do
       Turbo::Streams::Broadcasts.include(TurboPower::Broadcasts)
     end
+
+    initializer "turbo_power.broadcastable", after: :initialize do
+      Turbo::Broadcastable.include(TurboPower::Broadcastable)
+    end
   end
 end
