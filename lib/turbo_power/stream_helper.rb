@@ -223,12 +223,7 @@ module TurboPower
     # Turbo Actions
 
     def redirect_to(url = nil, turbo_action = "advance", turbo_frame = nil, **attributes)
-      args = {
-        url: url,
-        turbo_action: turbo_action
-      }
-      args[:turbo_frame] = turbo_frame if turbo_frame
-      custom_action :redirect_to, attributes: attributes.reverse_merge(args)
+      custom_action :redirect_to, attributes: attributes.reverse_merge(url: url, turbo_action: turbo_action, turbo_frame: turbo_frame).compact
     end
 
     def turbo_clear_cache(**attributes)
