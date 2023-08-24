@@ -35,7 +35,7 @@ module TurboPower
         assert_dom_equal stream, turbo_stream.redirect_to(url: "http://localhost:8080", turbo_action: "replace", turbo: true)
       end
 
-      test "redirect_to default" do
+      test "redirect_to with turbo_frame" do
         stream = %(<turbo-stream action="redirect_to" turbo-action="advance" turbo-frame="modals" url="http://localhost:8080"><template></template></turbo-stream>)
 
         assert_dom_equal stream, turbo_stream.redirect_to("http://localhost:8080", turbo_frame: "modals")
