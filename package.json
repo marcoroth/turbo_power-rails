@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "turbo_power-rails",
+  "version": "0.1.6",
+  "description": "Power-pack for Turbo Streams",
+  "license": "MIT",
+  "author": "Marco Roth <marco.roth@hey.com>",
+  "repository": "https://github.com/marcoroth/turbo_power-rails",
+  "homepage": "https://github.com/marcoroth/turbo_power-rails",
+  "module": "app/javascript/turbo_power/index.js",
+  "main": "app/assets/javascripts/turbo_power.js",
+  "files": [
+    "app/javascript/turbo_power"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prerelease": "yarn build"
+  },
+  "dependencies": {
+    "@hotwired/turbo": "^7.2.2",
+    "turbo_power": "^0.1.6"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "rollup": "^2.35.1",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
