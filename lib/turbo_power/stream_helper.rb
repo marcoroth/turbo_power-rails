@@ -106,6 +106,13 @@ module TurboPower
       custom_action_all :set_value, targets: targets, attributes: attributes.reverse_merge(value: value)
     end
 
+    def toggle_css_class(targets = nil, classes = "", **attributes)
+      classes = attributes[:classes] || classes
+      classes = classes.join(" ") if classes.is_a?(Array)
+
+      custom_action_all :toggle_css_class, targets: targets, attributes: attributes.merge(classes: classes)
+    end
+
     # Event Actions
 
     def dispatch_event(targets = nil, name = nil, detail: {}, **attributes)
