@@ -109,6 +109,7 @@ import 'controllers'
 * `turbo_stream.set_styles(targets, styles, **attributes)`
 * `turbo_stream.set_value(targets, value, **attributes)`
 * `turbo_stream.toggle_css_class(targets, classes, **attributes)`
+* `turbo_stream.replace_css_class(targets, from, to, **attributes)`
 
 
 ### Event Actions

@@ -113,6 +113,13 @@ module TurboPower
       custom_action_all :toggle_css_class, targets: targets, attributes: attributes.merge(classes: classes)
     end
 
+    def replace_css_class(targets = nil, from = "", to = "", **attributes)
+      from = attributes[:from] || from
+      to = attributes[:to] || to
+
+      custom_action_all :replace_css_class, targets: targets, attributes: attributes.merge(from: from, to: to)
+    end
+
     # Event Actions
 
     def dispatch_event(targets = nil, name = nil, detail: {}, **attributes)
