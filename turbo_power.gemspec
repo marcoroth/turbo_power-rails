@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
     "[A-Z]*"
   ]
 
-  spec.add_dependency "turbo-rails", "~> 1.3"
+  spec.add_dependency "turbo-rails", ">= 2.0.0.pre.beta", ">= 2.0.0.a", "< 2.0.0"
 end
