@@ -138,7 +138,10 @@ import 'controllers'
 ### Browser Actions
 
 * `turbo_stream.reload(**attributes)`
-* `turbo_stream.scroll_into_view(targets, **attributes)`
+* `turbo_stream.scroll_into_view(**attributes)`
+  * `turbo_stream.scroll_into_view(targets)`
+  * `turbo_stream.scroll_into_view(targets, align_to_top)`
+  * `turbo_stream.scroll_into_view(targets, behavior:,  block:, inline:)`
 * `turbo_stream.set_focus(targets, **attributes)`
 * `turbo_stream.set_title(title, **attributes)`
 
