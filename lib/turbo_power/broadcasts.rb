@@ -17,7 +17,7 @@ module TurboPower
     def custom_broadcast_action_to(*streamables, action:, **attributes)
       broadcast_stream_to(
         *streamables,
-        content: turbo_stream_action_tag(action, **attributes)
+        content: RenderHelper.public_send(action, **attributes)
       )
     end
 

@@ -3,7 +3,7 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
-require 'simplecov'
+require "simplecov"
 
 SimpleCov.start do
   add_filter "/test/"
@@ -12,6 +12,7 @@ end
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 require_relative "../test/dummy/config/environment"
+ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]
 require "rails/test_help"
 
 require "turbo_power"
