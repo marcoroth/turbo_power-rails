@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+require "turbo/broadcastable/test_helper"
 require "test_helper"
-require "turbo-rails"
 
 module TurboPower
   class BroadcastableTest < ActionCable::Channel::TestCase
