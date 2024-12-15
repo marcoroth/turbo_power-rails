@@ -113,11 +113,11 @@ module TurboPower
       custom_action_all :toggle_css_class, targets: targets, attributes: attributes.merge(classes: classes)
     end
 
-    def toggle_attribute(targets = nil, attribute = "", force = nil, **attributes)
+    def toggle_attribute(targets = nil, attribute = "", force = "false", **attributes)
       attribute = attributes[:attribute] || attribute
       force = attributes[:force] || force
 
-      custom_action_all :toggle_css_class, targets: targets, attributes: attributes.merge(attribute: attribute, force: force)
+      custom_action_all :toggle_attribute, targets: targets, attributes: attributes.merge(attribute: attribute, force: force)
     end
 
     def replace_css_class(targets = nil, from = "", to = "", **attributes)
