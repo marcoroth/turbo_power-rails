@@ -4,7 +4,7 @@ require "test_helper"
 
 module TurboPower
   class BroadcastableTest < ActionCable::Channel::TestCase
-    include ::Turbo::Broadcastable::TestHelper
+    include Turbo::Broadcastable::TestHelper
 
     test "broadcast_dispatch_event" do
       message = Message.new(id: 1)
