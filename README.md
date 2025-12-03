@@ -48,10 +48,10 @@ Initialize TurboPower in `application.js`:
 
 ```diff
 // application.js
-import * as Turbo from '@hotwired/turbo'
+import { Turbo } from "@hotwired/turbo-rails";
+import TurboPower from "turbo_power";
 
-+import TurboPower from 'turbo_power'
-+TurboPower.initialize(Turbo.StreamActions)
+TurboPower.initialize(Turbo.StreamActions);
 ```
 
 ### Installation on a stock Rails 7 install with importmaps
