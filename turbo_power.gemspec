@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/marcoroth/turbo_power-rails"
-  spec.metadata["changelog_uri"] = "https://github.com/marcoroth/turbo_power-rails/blob/main/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = "https://github.com/marcoroth/turbo_power-rails/releases"
   spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = Dir[
